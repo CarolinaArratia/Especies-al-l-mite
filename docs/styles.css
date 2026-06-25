@@ -26,10 +26,10 @@ body {
 }
 
 /* =========================================
-   SISTEMA DE MENÚ Y LOGO FLOTANTE (SCROLL)
+   MENÚ SUPERIOR
 ========================================= */
 .navbar {
-    position: fixed; /* Fixed para que controle el scroll */
+    position: fixed; 
     top: 0;
     width: 100%;
     background-color: var(--fondo);
@@ -40,7 +40,7 @@ body {
     padding: 15px 40px;
     box-sizing: border-box;
     z-index: 1000;
-    transition: transform 0.4s ease-in-out; /* Animación de contracción */
+    transition: transform 0.4s ease-in-out; 
 }
 
 .navbar .logo-nav {
@@ -63,46 +63,22 @@ body {
     text-decoration: none;
 }
 
-#logo-flotante {
-    position: fixed;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.4s ease-in-out;
-    z-index: 999;
-}
-
-#logo-flotante img {
-    width: 80px; /* Tamaño del logo acompañante */
-    height: auto;
-    border-bottom: none; /* Quitamos el borde verde por defecto de imgs */
-    opacity: 0.8;
-}
-
-#logo-flotante img:hover {
-    opacity: 1;
-}
-
 /* =========================================
    LAYOUT: MÁRGENES Y 75% / 25% PROPORCIÓN
 ========================================= */
 .contenedor-estrecho {
-    /* Simulando márgenes estrechos de Word (casi pantalla completa) */
     max-width: 1300px; 
     width: 92%;
-    margin: 100px auto 50px auto; /* 100px top compensa el menú fixo */
+    margin: 100px auto 50px auto; 
 }
 
 .ancho-texto {
-    /* El texto puro ocupa 3 cuartos (75%) */
     width: 75%;
     padding-right: 40px;
     box-sizing: border-box;
 }
 
 .bloque-interactivo {
-    /* Bloque que divide el párrafo y la ficha interactiva */
     display: flex;
     width: 100%;
     align-items: flex-start;
@@ -126,7 +102,7 @@ body {
 .espacio-banner {
     width: 100%;
     min-height: 250px;
-    background-color: #E8E5DC; /* Fondo temporal para que se note el espacio */
+    background-color: #E8E5DC; 
     border: 2px dashed var(--interfaz);
     margin-bottom: 40px;
     display: flex;
@@ -253,7 +229,7 @@ a:hover {
 
 .slider-contenedor {
     position: relative;
-    height: 180px; /* Altura de la imagen/texto de la ficha */
+    height: 180px; 
     background-color: #fff;
     border-radius: 5px;
     display: flex;
