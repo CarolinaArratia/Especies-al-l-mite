@@ -1,0 +1,179 @@
+/* Variables de la Identidad Visual */
+:root {
+    --fondo: #FBF8F0;
+    --texto: #1F3D5B;
+    --titulos: #91532B;
+    --enlaces: #0695D1;
+    --datos-verde: #529E47;
+    --interfaz: #187670;
+    --destacado-burgundy: #86223E;
+    --recuadros: #EFEDA0;
+    --fuente-titulos: 'Capriola', sans-serif;
+    --fuente-cuerpo: 'Lora', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navegación Sticky */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--fondo);
+    border-bottom: 2px solid var(--interfaz);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: var(--fuente-titulos);
+    color: var(--titulos);
+    font-size: 1.2rem;
+}
+
+.navbar .enlaces a {
+    margin-left: 20px;
+    font-size: 0.95rem;
+    color: var(--texto);
+    font-weight: normal;
+}
+
+.navbar .enlaces a:hover {
+    color: var(--enlaces);
+    text-decoration: none;
+}
+
+/* Contenedor central */
+.contenedor {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+}
+
+.header-principal {
+    max-width: 800px;
+    margin: 60px auto 50px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.bajada-principal {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--texto);
+    margin-top: 20px;
+}
+
+.cronica-seccion {
+    margin-bottom: 80px;
+    padding-top: 40px; /* Para que al hacer click en el menú, no lo tape la barra */
+}
+
+.autor-etiqueta {
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: var(--interfaz);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--titulos);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.linea-divisoria {
+    border: 0;
+    height: 3px;
+    background-color: var(--destacado-burgundy);
+    width: 100px;
+    margin: 25px auto;
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 24px;
+}
+
+strong {
+    color: var(--destacado-burgundy);
+}
+
+a {
+    color: var(--enlaces);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.grafico-container {
+    background-color: var(--recuadros);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid var(--datos-verde);
+    border-radius: 4px;
+    display: block;
+}
+
+.epigrafe {
+    font-size: 0.95rem;
+    color: var(--texto);
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+footer {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    border-top: 2px solid var(--interfaz);
+    text-align: center;
+    font-size: 0.95rem;
+}
