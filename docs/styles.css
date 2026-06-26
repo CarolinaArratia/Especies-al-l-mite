@@ -2,11 +2,11 @@
 :root {
     --fondo: #FBF8F0;
     --texto: #1F3D5B;
-    --titulos: #91532B;
+    --titulos: #6A4C93;
     --enlaces: #0695D1;
     --datos-verde: #529E47;
     --interfaz: #187670;
-    --destacado-burgundy: #86223E;
+    --destacado-burgundy: #D10074;
     --recuadros: #EFEDA0;
     --fuente-titulos: 'Capriola', sans-serif;
     --fuente-cuerpo: 'Lora', serif;
@@ -64,7 +64,7 @@ body {
 }
 
 /* =========================================
-   LAYOUT: MÁRGENES Y 75% / 25% PROPORCIÓN
+   LAYOUT: MÁRGENES Y PROPORCIONES
 ========================================= */
 .contenedor-estrecho {
     max-width: 1300px; 
@@ -85,14 +85,15 @@ body {
     margin-bottom: 24px;
 }
 
+/* Ajuste: 50% para el texto y 50% para la ficha */
 .texto-izquierdo {
-    width: 75%;
+    width: 50%;
     padding-right: 40px;
     box-sizing: border-box;
 }
 
 .ficha-derecha {
-    width: 25%;
+    width: 50%;
     box-sizing: border-box;
 }
 
@@ -148,11 +149,12 @@ h3 {
     margin-top: 20px;
 }
 
+/* Ajuste: Ancho al 100% */
 .linea-divisoria {
     border: 0;
     height: 3px;
     background-color: var(--destacado-burgundy);
-    width: 100px;
+    width: 100%;
     margin: 25px 0;
     border-radius: 2px;
 }
@@ -195,6 +197,13 @@ a:hover {
     border-bottom: 5px solid var(--datos-verde);
     border-radius: 4px;
     display: block;
+}
+
+/* Reglas añadidas para asegurar que los gráficos de Vega se vean bien */
+.vega-embed {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .epigrafe {
