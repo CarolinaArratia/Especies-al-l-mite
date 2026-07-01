@@ -39,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // ==========================================
-    // 2. FICHAS INTERACTIVAS (Acordeón y Sliders Internos)
+    // 2. FICHAS INTERACTIVAS (Acordeón y Carrusel)
     // ==========================================
-    
-    // Lógica para abrir/cerrar acordeón
     var acordeones = document.querySelectorAll(".acordeon-btn");
 
     acordeones.forEach(function(btn) {
@@ -50,11 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
             this.classList.toggle("active");
            
             var panel = this.nextElementSibling;
+            var icono = this.querySelector('.icono-acordeon'); // Buscamos si hay un icono + o -
            
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
+                if(icono) icono.textContent = '+'; // Solo lo cambia si existe
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";
+                if(icono) icono.textContent = '-'; // Solo lo cambia si existe
             }
         });
     });
@@ -91,9 +92,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
        
+        // Si el usuario baja más de 80px, la barra se contrae
         if (scrollTop > 80) {
             navbar.classList.add('contraida');
         } else {
+            // Si sube al tope, la barra vuelve a su tamaño normal
             navbar.classList.remove('contraida');
         }
     });

@@ -28,6 +28,14 @@
         border-radius: 12px;
         border-bottom: 5px solid var(--datos-verde);
         box-sizing: border-box;
+        overflow: hidden;
+      }
+      .vega-embed-container > div {
+        width: 100%;
+      }
+      .vega-embed {
+        width: 100% !important;
+        max-width: 100%;
       }
       .vega-embed details,
       .vega-embed details summary {
@@ -54,6 +62,7 @@
         <div class="enlaces">
             <a href="galeria.html" target="_blank">Galería</a>
             <a href="visualizaciones.html" target="_blank">Visualizaciones</a>
+            <a href="diccionario.html" target="_blank">Diccionario</a>
         </div>
     </nav>
 
@@ -64,6 +73,20 @@
                 <h1>La doble extinción de la fauna chilena</h1>
                 <hr class="linea-divisoria">
                 <p class="bajada-principal">Mientras íconos como el huemul dominan nuestro imaginario, una silenciosa brecha condena a la extinción absoluta a decenas de especies que carecen de carisma mediático.</p>
+                
+                <p>Aquí se reúnen las especies olvidadas, aquellas que, por motivos que se irán revelando a medida que se adentren en Especies al límite, han quedado relegadas de los medios, de las búsquedas en Internet e incluso del uso de un nombre común más allá del científico.</p>
+                
+                <p>En Chile son 213 las especies que se encuentran en las categorías más altas de peligro de extinción: en peligro crítico y en peligro, existiendo dentro de este grupo algunas catalogadas además como en peligro raro.</p>
+                
+                <p>Antes de continuar, es importante detenerse en cómo se clasifican estos niveles de riesgo. A continuación, se presenta una guía que permite comprender qué significa cada categoría.</p>
+                
+                <div style="text-align: center; margin: 40px 0;">
+                    <img src="categorias.jpeg" alt="Categorías de vulneración" style="max-width: 100%; border-radius: 8px; border: 2px solid var(--interfaz);">
+                </div>
+
+                <p>Aunque son muchas más las especies que habitan en nuestro país y que efectivamente se encuentran dentro de estas categorías, aquí se abordan únicamente aquellas que son endémicas; es decir, que no se encuentran en ningún otro lugar del mundo que no sea el territorio nacional. Así, por ejemplo, si una especie habita en la Patagonia —zona compartida entre Chile y Argentina—, deja de ser endémica y, por lo tanto, no forma parte de esta selección.</p>
+                
+                <p>Ahora te dejamos con Borrachito, quien te llevará por un <strong><em>recorrido entre especies olvidadas, únicas y en riesgo.</em></strong></p>
             </div>
         </header>
 
@@ -79,7 +102,7 @@
                 </div>
                 
                 <div class="ficha-derecha">
-                    <button class="acordeon-btn">Conoce más sobre el Borrachito</button>
+                    <button class="acordeon-btn">Conoce más sobre el Borrachito <span class="icono-acordeon">+</span></button>
                     <div class="acordeon-panel">
                         <div class="slider-wrapper">
                             <div class="slider-contenedor">
@@ -108,7 +131,88 @@
                     <div id="vis-martina"></div>
                     <script>
                       (function(vegaEmbed) {
-                        var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}, "axis": {"labelColor": "#1A2C46", "titleColor": "#1A2C46"}, "legend": {"labelColor": "#1A2C46", "titleColor": "#1A2C46"}, "title": {"color": "#1A2C46", "fontSize": 20}}, "vconcat": [{"data": {"name": "data-f8523f23d62a8f59d07c08580ddbc375"}, "mark": {"type": "text", "align": "left", "color": "#1A2C46", "fontSize": 16}, "encoding": {"text": {"field": "texto", "type": "nominal"}}, "height": 40, "width": 800}, {"data": {"name": "data-3e97910a1153d7b010473dbac440d445"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "CATEGOR\u00cdA VIGENTE", "scale": {"domain": ["CR", "EN", "EN-RARA"], "range": ["#8F2A3F", "#EFEDA0", "#1A2C46"]}, "title": "Categor\u00eda", "type": "nominal"}, "tooltip": [{"field": "REGI\u00d3N", "title": "Regi\u00f3n", "type": "nominal"}, {"field": "CATEGOR\u00cdA VIGENTE", "title": "Categor\u00eda", "type": "nominal"}, {"field": "TOTAL", "title": "Cantidad", "type": "quantitative"}], "x": {"field": "TOTAL", "title": "Cantidad de especies", "type": "quantitative"}, "y": {"field": "REGI\u00d3N", "sort": "-x", "title": "Regi\u00f3n", "type": "nominal"}}, "height": 500, "title": "Especies amenazadas por regi\u00f3n seg\u00fan categor\u00eda de conservaci\u00f3n", "width": 800}], "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f8523f23d62a8f59d07c08580ddbc375": [{"texto": "CR: 82 especies   | EN: 227 especies   |   EN-RARA: 27 especies   | Total: 336 especies"}], "data-3e97910a1153d7b010473dbac440d445": [{"REGI\u00d3N": "Antofagasta (II)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 15}, {"REGI\u00d3N": "Antofagasta (II)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 15}, {"REGI\u00d3N": "Araucan\u00eda (IX)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 3}, {"REGI\u00d3N": "Araucan\u00eda (IX)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 17}, {"REGI\u00d3N": "Araucan\u00eda (IX)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 4}, {"REGI\u00d3N": "Arica y Parinacota (XV)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 2}, {"REGI\u00d3N": "Arica y Parinacota (XV)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 7}, {"REGI\u00d3N": "Arica y Parinacota (XV)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 4}, {"REGI\u00d3N": "Atacama (III)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 2}, {"REGI\u00d3N": "Atacama (III)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 9}, {"REGI\u00d3N": "Ays\u00e9n (XI)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 3}, {"REGI\u00d3N": "B\u00edo-B\u00edo (VIII)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 9}, {"REGI\u00d3N": "B\u00edo-B\u00edo (VIII)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 22}, {"REGI\u00d3N": "B\u00edo-B\u00edo (VIII)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 5}, {"REGI\u00d3N": "Coquimbo (IV)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 3}, {"REGI\u00d3N": "Coquimbo (IV)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 14}, {"REGI\u00d3N": "De Los Lagos (X)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 11}, {"REGI\u00d3N": "De Los Lagos (X)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 1}, {"REGI\u00d3N": "De Los R\u00edos (XIV)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 2}, {"REGI\u00d3N": "De Los R\u00edos (XIV)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 14}, {"REGI\u00d3N": "De Los R\u00edos (XIV)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 3}, {"REGI\u00d3N": "Desventuradas", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 3}, {"REGI\u00d3N": "Desventuradas", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 2}, {"REGI\u00d3N": "Insular", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 3}, {"REGI\u00d3N": "Isla de Pascua", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 2}, {"REGI\u00d3N": "Juan Fern\u00e1ndez", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 19}, {"REGI\u00d3N": "Juan Fern\u00e1ndez", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 33}, {"REGI\u00d3N": "Juan Fern\u00e1ndez", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 1}, {"REGI\u00d3N": "Maule (VII)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 3}, {"REGI\u00d3N": "Maule (VII)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 17}, {"REGI\u00d3N": "Maule (VII)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 1}, {"REGI\u00d3N": "Metropolitana (RM)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 5}, {"REGI\u00d3N": "Metropolitana (RM)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 18}, {"REGI\u00d3N": "Metropolitana (RM)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 3}, {"REGI\u00d3N": "O'Higgins (VI)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 6}, {"REGI\u00d3N": "O'Higgins (VI)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 10}, {"REGI\u00d3N": "O'Higgins (VI)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 3}, {"REGI\u00d3N": "Tarapaca (I)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 3}, {"REGI\u00d3N": "Tarapaca (I)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 4}, {"REGI\u00d3N": "Tarapaca (I)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 1}, {"REGI\u00d3N": "Valpara\u00edso continental (V)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 5}, {"REGI\u00d3N": "Valpara\u00edso continental (V)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 13}, {"REGI\u00d3N": "Valpara\u00edso continental (V)", "CATEGOR\u00cdA VIGENTE": "EN-RARA", "TOTAL": 1}, {"REGI\u00d3N": "\u00d1uble  (XVI)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 1}, {"REGI\u00d3N": "\u00d1uble  (XVI)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 12}, {"REGI\u00d3N": "\u00d1uble (XVI)", "CATEGOR\u00cdA VIGENTE": "CR", "TOTAL": 1}, {"REGI\u00d3N": "\u00d1uble (XVI)", "CATEGOR\u00cdA VIGENTE": "EN", "TOTAL": 1}]}};
+                        var spec = {
+                          "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+                          "background": "#FBF8F0",
+                          "config": {
+                            "view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null},
+                            "axis": {"labelColor": "#1A2C46", "titleColor": "#1A2C46"},
+                            "legend": {"labelColor": "#1A2C46", "titleColor": "#1A2C46"},
+                            "title": {"color": "#1A2C46", "fontSize": 20, "subtitleColor": "#1A2C46", "subtitleFontSize": 15, "anchor": "start", "offset": 20}
+                          },
+                          "title": {
+                            "text": "Especies amenazadas por región según categoría de conservación",
+                            "subtitle": "CR: 82 especies   | EN: 227 especies   |   EN-RARA: 27 especies   | Total: 336 especies"
+                          },
+                          "data": {"name": "dataset1"},
+                          "mark": {"type": "bar"},
+                          "encoding": {
+                            "x": {"field": "TOTAL", "type": "quantitative", "title": "Cantidad de especies"},
+                            "y": {"field": "REGIÓN", "type": "nominal", "sort": "-x", "title": "Región"},
+                            "color": {
+                              "field": "CATEGORÍA VIGENTE",
+                              "type": "nominal",
+                              "title": "Categoría",
+                              "scale": {"domain": ["CR", "EN", "EN-RARA"], "range": ["#8F2A3F", "#EFEDA0", "#1A2C46"]}
+                            },
+                            "tooltip": [
+                              {"field": "REGIÓN", "type": "nominal", "title": "Región"},
+                              {"field": "CATEGORÍA VIGENTE", "type": "nominal", "title": "Categoría"},
+                              {"field": "TOTAL", "type": "quantitative", "title": "Cantidad"}
+                            ]
+                          },
+                          "width": "container",
+                          "height": 500,
+                          "datasets": {
+                            "dataset1": [
+                              {"REGIÓN": "Antofagasta (II)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 15},
+                              {"REGIÓN": "Antofagasta (II)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 15},
+                              {"REGIÓN": "Araucanía (IX)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 3},
+                              {"REGIÓN": "Araucanía (IX)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 17},
+                              {"REGIÓN": "Araucanía (IX)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 4},
+                              {"REGIÓN": "Arica y Parinacota (XV)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 2},
+                              {"REGIÓN": "Arica y Parinacota (XV)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 7},
+                              {"REGIÓN": "Arica y Parinacota (XV)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 4},
+                              {"REGIÓN": "Atacama (III)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 2},
+                              {"REGIÓN": "Atacama (III)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 9},
+                              {"REGIÓN": "Aysén (XI)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 3},
+                              {"REGIÓN": "Bío-Bío (VIII)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 9},
+                              {"REGIÓN": "Bío-Bío (VIII)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 22},
+                              {"REGIÓN": "Bío-Bío (VIII)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 5},
+                              {"REGIÓN": "Coquimbo (IV)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 3},
+                              {"REGIÓN": "Coquimbo (IV)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 14},
+                              {"REGIÓN": "De Los Lagos (X)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 11},
+                              {"REGIÓN": "De Los Lagos (X)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 1},
+                              {"REGIÓN": "De Los Ríos (XIV)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 2},
+                              {"REGIÓN": "De Los Ríos (XIV)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 14},
+                              {"REGIÓN": "De Los Ríos (XIV)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 3},
+                              {"REGIÓN": "Desventuradas", "CATEGORÍA VIGENTE": "CR", "TOTAL": 3},
+                              {"REGIÓN": "Desventuradas", "CATEGORÍA VIGENTE": "EN", "TOTAL": 2},
+                              {"REGIÓN": "Insular", "CATEGORÍA VIGENTE": "EN", "TOTAL": 3},
+                              {"REGIÓN": "Isla de Pascua", "CATEGORÍA VIGENTE": "EN", "TOTAL": 2},
+                              {"REGIÓN": "Juan Fernández", "CATEGORÍA VIGENTE": "CR", "TOTAL": 19},
+                              {"REGIÓN": "Juan Fernández", "CATEGORÍA VIGENTE": "EN", "TOTAL": 33},
+                              {"REGIÓN": "Juan Fernández", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 1},
+                              {"REGIÓN": "Maule (VII)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 3},
+                              {"REGIÓN": "Maule (VII)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 17},
+                              {"REGIÓN": "Maule (VII)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 1},
+                              {"REGIÓN": "Metropolitana (RM)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 5},
+                              {"REGIÓN": "Metropolitana (RM)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 18},
+                              {"REGIÓN": "Metropolitana (RM)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 3},
+                              {"REGIÓN": "O'Higgins (VI)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 6},
+                              {"REGIÓN": "O'Higgins (VI)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 10},
+                              {"REGIÓN": "O'Higgins (VI)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 3},
+                              {"REGIÓN": "Tarapacá (I)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 3},
+                              {"REGIÓN": "Tarapacá (I)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 4},
+                              {"REGIÓN": "Tarapacá (I)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 1},
+                              {"REGIÓN": "Valparaíso continental (V)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 5},
+                              {"REGIÓN": "Valparaíso continental (V)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 13},
+                              {"REGIÓN": "Valparaíso continental (V)", "CATEGORÍA VIGENTE": "EN-RARA", "TOTAL": 1},
+                              {"REGIÓN": "Ñuble (XVI)", "CATEGORÍA VIGENTE": "CR", "TOTAL": 2},
+                              {"REGIÓN": "Ñuble (XVI)", "CATEGORÍA VIGENTE": "EN", "TOTAL": 13}
+                            ]
+                          }
+                        };
                         var embedOpt = {"mode": "vega-lite"};
                         vegaEmbed("#vis-martina", spec, embedOpt).catch(console.error);
                       })(vegaEmbed);
@@ -143,7 +247,62 @@
                     <div id="vis-virginia"></div>
                     <script>
                       (function(vegaEmbed) {
-                        var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}, "axis": {"gridColor": "#EFEDA0", "gridOpacity": 0.6, "labelColor": "#1F3D5B", "labelFontSize": 13, "titleColor": "#1F3D5B", "titleFontSize": 14}, "legend": {"labelColor": "#1F3D5B", "labelFontSize": 13, "symbolSize": 180, "titleFontSize": 14}, "title": {"anchor": "start", "color": "#91532B", "fontSize": 22, "offset": 20, "subtitleColor": "#1F3D5B", "subtitleFontSize": 14}}, "data": {"name": "data-403a539f6085133a54b9b0bdafd8c9de"}, "mark": {"type": "circle", "opacity": 0.9, "size": 260}, "encoding": {"color": {"field": "Grupo", "legend": {"orient": "top-right"}, "scale": {"domain": ["M\u00e1s visitadas", "Especies medi\u00e1ticas", "Menos visitadas"], "range": ["#0695D1", "#86223E", "#1F3D5B"]}, "title": "", "type": "nominal"}, "tooltip": [{"field": "Nombre Cient\u00edfico", "title": "Nombre cient\u00edfico", "type": "nominal"}, {"field": "Nombre Com\u00fan", "title": "Nombre com\u00fan", "type": "nominal"}, {"field": "Clase", "title": "Clase", "type": "nominal"}, {"field": "RCE", "title": "Categor\u00eda", "type": "nominal"}, {"field": "Total Visitas (periodo seis meses)", "title": "Visitas", "type": "quantitative"}], "x": {"field": "Total Visitas (periodo seis meses)", "title": "Total de visitas en Wikipedia (6 meses)", "type": "quantitative"}, "y": {"axis": {"labelLimit": 500}, "field": "Etiqueta", "sort": ["Pez (Gen\u00e9rico)", "Gusano Aterciopelado", "Lagartija Negro Azulada", "Liguay", "Ranita De Darwin", "Ping\u00fcino De Humboldt", "Huemul", "Lagartija De Fabi\u00e1n", "Zorro De Chilo\u00e9", "Chinchilla Costina"], "title": "", "type": "nominal"}}, "height": 450, "title": {"text": "Las especies amenazadas que s\u00ed vemos y las que ignoramos", "subtitle": ["Contraste de inter\u00e9s ciudadano y volumen de visitas digitales en Wikipedia"]}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-403a539f6085133a54b9b0bdafd8c9de": [{"ID": 112, "Nombre Cient\u00edfico": "Chinchilla lanigera", "Nombre Com\u00fan": "Chinchilla costina", "Clase": "Mammalia", "RCE": "EN", "Total Visitas (periodo seis meses)": 9259.0, "Promedio Diario": "51", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Chinchilla_lanigera ", "Etiqueta": "Chinchilla Costina", "Grupo": "M\u00e1s visitadas"}, {"ID": 167, "Nombre Cient\u00edfico": "Lycalopex fulvipes", "Nombre Com\u00fan": "Zorro de Chilo\u00e9", "Clase": "Mammalia", "RCE": "EN", "Total Visitas (periodo seis meses)": 2152.0, "Promedio Diario": "12", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Lycalopex_fulvipes ", "Etiqueta": "Zorro De Chilo\u00e9", "Grupo": "M\u00e1s visitadas"}, {"ID": 154, "Nombre Cient\u00edfico": "Liolaemus fabiani", "Nombre Com\u00fan": "Lagartija de Fabi\u00e1n", "Clase": "Reptilia", "RCE": "EN", "Total Visitas (periodo seis meses)": 1311.0, "Promedio Diario": "7", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Liolaemus_fabiani ", "Etiqueta": "Lagartija De Fabi\u00e1n", "Grupo": "M\u00e1s visitadas"}, {"ID": 214, "Nombre Cient\u00edfico": "Hippocamelus bisulcus", "Nombre Com\u00fan": "huemul, taruca, w\u00fcmul, g\u00fcemul, shoan, shoen, trula, hueque, ciervo sur andino", "Clase": "Mammalia", "RCE": "EN", "Total Visitas (periodo seis meses)": 988.0, "Promedio Diario": "5", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Hippocamelus_bisulcus ", "Etiqueta": "Huemul", "Grupo": "Especies medi\u00e1ticas"}, {"ID": 216, "Nombre Cient\u00edfico": "Spheniscus humboldti", "Nombre Com\u00fan": "ping\u00fcino de Humboldt, ping\u00fcino, p\u00e1jaro ni\u00f1o, patranka, Humboldt Penguin (ingl\u00e9s), Peruvian penguin (ingl\u00e9s)", "Clase": "Aves", "RCE": "EN", "Total Visitas (periodo seis meses)": 952.0, "Promedio Diario": "5", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Spheniscus_humboldti ", "Etiqueta": "Ping\u00fcino De Humboldt", "Grupo": "Especies medi\u00e1ticas"}, {"ID": 87, "Nombre Cient\u00edfico": "Americobdella valdiviana", "Nombre Com\u00fan": "Liguay, sanguijuela gigante valdiviana", "Clase": "Clitellata", "RCE": "EN", "Total Visitas (periodo seis meses)": 15.0, "Promedio Diario": "0", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Americobdella_valdiviana ", "Etiqueta": "Liguay", "Grupo": "Menos visitadas"}, {"ID": 160, "Nombre Cient\u00edfico": "Liolaemus nigrocoeruleus", "Nombre Com\u00fan": "Lagartija negro azulada, Black Bluish Lizard (Ingl\u00e9s)", "Clase": "Reptilia", "RCE": "EN", "Total Visitas (periodo seis meses)": 13.0, "Promedio Diario": "0", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Liolaemus_nigrocoeruleus ", "Etiqueta": "Lagartija Negro Azulada", "Grupo": "Menos visitadas"}, {"ID": 181, "Nombre Cient\u00edfico": "Paropisthopatus umbrinus", "Nombre Com\u00fan": "Gusano aterciopelado, onic\u00f3foro (gen\u00e9rico)", "Clase": "Udeonycophora", "RCE": "EN", "Total Visitas (periodo seis meses)": 8.0, "Promedio Diario": "0", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Paropisthopatus_umbrinus ", "Etiqueta": "Gusano Aterciopelado", "Grupo": "Menos visitadas"}, {"ID": 46, "Nombre Cient\u00edfico": "Pseudorestias lirimensis", "Nombre Com\u00fan": "pez (gen\u00e9rico)", "Clase": "Actinopterygii", "RCE": "CR", "Total Visitas (periodo seis meses)": 5.0, "Promedio Diario": "0", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Pseudorestias_lirimensis", "Etiqueta": "Pez (Gen\u00e9rico)", "Grupo": "Menos visitadas"}, {"ID": 215, "Nombre Cient\u00edfico": "Rhinoderma darwinii", "Nombre Com\u00fan": "ranita de Darwin", "Clase": "Amphibia", "RCE": "EN", "Total Visitas (periodo seis meses)": 380.0, "Promedio Diario": "2", "URL Fuente": "https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-25&end=2026-03-25&pages=Rhinoderma_darwinii ", "Etiqueta": "Ranita De Darwin", "Grupo": "Especies medi\u00e1ticas"}]}};
+                        var spec = {
+                          "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+                          "background": "#FBF8F0",
+                          "config": {
+                            "view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null},
+                            "axis": {"gridColor": "#EFEDA0", "gridOpacity": 0.6, "labelColor": "#1F3D5B", "labelFontSize": 13, "titleColor": "#1F3D5B", "titleFontSize": 14},
+                            "legend": {"labelColor": "#1F3D5B", "labelFontSize": 13, "symbolSize": 180, "titleFontSize": 14},
+                            "title": {"anchor": "start", "color": "#91532B", "fontSize": 22, "offset": 20, "subtitleColor": "#1F3D5B", "subtitleFontSize": 14}
+                          },
+                          "title": {
+                            "text": "Las especies amenazadas que sí vemos y las que ignoramos",
+                            "subtitle": ["Contraste de interés ciudadano y volumen de visitas digitales en Wikipedia"]
+                          },
+                          "data": {"name": "dataset2"},
+                          "mark": {"type": "circle", "opacity": 0.9, "size": 260},
+                          "encoding": {
+                            "x": {"field": "Total Visitas", "type": "quantitative", "title": "Total de visitas en Wikipedia (6 meses)"},
+                            "y": {
+                              "field": "Etiqueta",
+                              "type": "nominal",
+                              "title": "",
+                              "axis": {"labelLimit": 500},
+                              "sort": ["Pez (Genérico)", "Gusano Aterciopelado", "Lagartija Negro Azulada", "Liguay", "Ranita de Darwin", "Pingüino de Humboldt", "Huemul", "Lagartija de Fabián", "Zorro de Chiloé", "Chinchilla Costina"]
+                            },
+                            "color": {
+                              "field": "Grupo",
+                              "type": "nominal",
+                              "title": "",
+                              "scale": {"domain": ["Más visitadas", "Especies mediáticas", "Menos visitadas"], "range": ["#0695D1", "#86223E", "#1F3D5B"]},
+                              "legend": {"orient": "top-right"}
+                            },
+                            "tooltip": [
+                              {"field": "Nombre Científico", "type": "nominal", "title": "Nombre científico"},
+                              {"field": "Nombre Común", "type": "nominal", "title": "Nombre común"},
+                              {"field": "Clase", "type": "nominal", "title": "Clase"},
+                              {"field": "RCE", "type": "nominal", "title": "Categoría"},
+                              {"field": "Total Visitas", "type": "quantitative", "title": "Visitas"}
+                            ]
+                          },
+                          "width": "container",
+                          "height": 450,
+                          "datasets": {
+                            "dataset2": [
+                              {"Nombre Científico": "Chinchilla lanigera", "Nombre Común": "Chinchilla costina", "Clase": "Mammalia", "RCE": "EN", "Total Visitas": 9259, "Etiqueta": "Chinchilla Costina", "Grupo": "Más visitadas"},
+                              {"Nombre Científico": "Lycalopex fulvipes", "Nombre Común": "Zorro de Chiloé", "Clase": "Mammalia", "RCE": "EN", "Total Visitas": 2152, "Etiqueta": "Zorro de Chiloé", "Grupo": "Más visitadas"},
+                              {"Nombre Científico": "Liolaemus fabiani", "Nombre Común": "Lagartija de Fabián", "Clase": "Reptilia", "RCE": "EN", "Total Visitas": 1311, "Etiqueta": "Lagartija de Fabián", "Grupo": "Más visitadas"},
+                              {"Nombre Científico": "Hippocamelus bisulcus", "Nombre Común": "Huemul", "Clase": "Mammalia", "RCE": "EN", "Total Visitas": 988, "Etiqueta": "Huemul", "Grupo": "Especies mediáticas"},
+                              {"Nombre Científico": "Spheniscus humboldti", "Nombre Común": "Pingüino de Humboldt", "Clase": "Aves", "RCE": "EN", "Total Visitas": 952, "Etiqueta": "Pingüino de Humboldt", "Grupo": "Especies mediáticas"},
+                              {"Nombre Científico": "Rhinoderma darwinii", "Nombre Común": "Ranita de Darwin", "Clase": "Amphibia", "RCE": "EN", "Total Visitas": 380, "Etiqueta": "Ranita de Darwin", "Grupo": "Especies mediáticas"},
+                              {"Nombre Científico": "Americobdella valdiviana", "Nombre Común": "Liguay", "Clase": "Clitellata", "RCE": "EN", "Total Visitas": 15, "Etiqueta": "Liguay", "Grupo": "Menos visitadas"},
+                              {"Nombre Científico": "Liolaemus nigrocoeruleus", "Nombre Común": "Lagartija negro azulada", "Clase": "Reptilia", "RCE": "EN", "Total Visitas": 13, "Etiqueta": "Lagartija Negro Azulada", "Grupo": "Menos visitadas"},
+                              {"Nombre Científico": "Paropisthopatus umbrinus", "Nombre Común": "Gusano aterciopelado", "Clase": "Udeonycophora", "RCE": "EN", "Total Visitas": 8, "Etiqueta": "Gusano Aterciopelado", "Grupo": "Menos visitadas"},
+                              {"Nombre Científico": "Pseudorestias lirimensis", "Nombre Común": "Pez genérico", "Clase": "Actinopterygii", "RCE": "CR", "Total Visitas": 5, "Etiqueta": "Pez (Genérico)", "Grupo": "Menos visitadas"}
+                            ]
+                          }
+                        };
                         var embedOpt = {"mode": "vega-lite"};
                         vegaEmbed("#vis-virginia", spec, embedOpt).catch(console.error);
                       })(vegaEmbed);
@@ -171,7 +330,7 @@
                 </div>
                 
                 <div class="ficha-derecha">
-                    <button class="acordeon-btn">Conoce más sobre la Chinchilla</button>
+                    <button class="acordeon-btn">Conoce más sobre la Chinchilla <span class="icono-acordeon">+</span></button>
                     <div class="acordeon-panel">
                         <div class="slider-wrapper">
                             <div class="slider-contenedor">
@@ -207,7 +366,7 @@
                 </div>
                 
                 <div class="ficha-derecha">
-                    <button class="acordeon-btn">Conoce más sobre el Pingüino</button>
+                    <button class="acordeon-btn">Conoce más sobre el Pingüino <span class="icono-acordeon">+</span></button>
                     <div class="acordeon-panel">
                         <div class="slider-wrapper">
                             <div class="slider-contenedor">
@@ -236,7 +395,112 @@
                     <div id="vis-carolina"></div>
                     <script>
                       (function(vegaEmbed) {
-                        var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "background": "#FBF8F0"}, "layer": [{"mark": {"type": "rect", "stroke": "white", "strokeWidth": 1}, "encoding": {"color": {"field": "RCE", "scale": {"domain": ["CR", "EN"], "range": ["#86223E", "#91532B"]}, "title": "Categor\u00eda de Riesgo", "type": "nominal"}, "tooltip": [{"field": "Nombre com\u00fan", "title": "Nombre Com\u00fan", "type": "nominal"}, {"field": "Nombre cient\u00edfico", "title": "Nombre Cient\u00edfico", "type": "nominal"}, {"field": "RCE", "title": "Estado de Conservaci\u00f3n", "type": "nominal"}, {"field": "Ficha t\u00e9cnica", "title": "Ficha T\u00e9cnica Descriptiva", "type": "nominal"}], "x": {"axis": {"format": "%"}, "field": "x0", "title": "Distribuci\u00f3n del Espacio Medi\u00e1tico", "type": "quantitative"}, "x2": {"field": "x1"}, "y": {"value": 50}, "y2": {"value": 350}}}, {"mark": {"type": "text", "align": "center", "angle": 270, "baseline": "middle", "color": "white", "fontSize": 12, "fontWeight": "bold"}, "encoding": {"text": {"field": "etiqueta_grafico", "type": "nominal"}, "x": {"field": "xmid", "type": "quantitative"}, "y": {"value": 200}}}], "data": {"name": "data-6fe9bf1e4e767c9b7d3ed32c03bb2b6a"}, "height": 400, "title": {"text": "LA ASFIXIA DEL ESPACIO MEDI\u00c1TICO", "subtitle": ["Mientras algunas especies brillan en su protagonismo, otras son invisibles para los medios."], "color": "#91532B", "fontSize": 22, "subtitleColor": "#1F3D5B"}, "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-6fe9bf1e4e767c9b7d3ed32c03bb2b6a": [{"Etiqueta": 216, "Nombre cient\u00edfico": "Spheniscus humboldti", "Nombre com\u00fan": "Ping\u00fcino de Humboldt", "Clase": "Aves", "RCE": "EN", "End\u00e9mica": "No", "Apariciones": 76, "Protagonista": 76, "% Protagonismo": "100", "Foto": 76, "Link foto": "https://live.staticflickr.com/65535/55263020062_f44250f42a.jpg", "Ficha t\u00e9cnica": "Vive en costas e islas del norte y centro de Chile. En Peligro (EN), nidifica en cavidades de guano y se ve afectado por la sobrepesca y el cambio clim\u00e1tico.", "prop": 0.5277777777777778, "x0": 0.0, "x1": 0.5277777777777778, "xmid": 0.2638888888888889, "etiqueta_grafico": "Ping\u00fcino de Humboldt"}, {"Etiqueta": 215, "Nombre cient\u00edfico": "Rhinoderma darwinii", "Nombre com\u00fan": "Ranita de Darwin", "Clase": "Amphibia", "RCE": "EN", "End\u00e9mica": "No", "Apariciones": 24, "Protagonista": 24, "% Protagonismo": "100", "Foto": 24, "Link foto": "https://live.staticflickr.com/65535/55264061388_d183652526.jpg", "Ficha t\u00e9cnica": "Habita bosques templados del sur. En estado En Peligro (EN), destaca porque el macho incuba los renacuajos en su saco vocal. Sus poblaciones declinan por el hongo qu\u00edtrido y la deforestaci\u00f3n.", "prop": 0.16666666666666666, "x0": 0.5277777777777778, "x1": 0.6944444444444444, "xmid": 0.6111111111111112, "etiqueta_grafico": "Ranita de Darwin"}, {"Etiqueta": 49, "Nombre cient\u00edfico": "Rhinoderma rufum", "Nombre com\u00fan": "Ranita de Darwin del Norte", "Clase": "Amphibia", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 13, "Protagonista": 4, "% Protagonismo": "30,76923077", "Foto": 13, "Link foto": "https://live.staticflickr.com/65535/55263020057_84a2207950.jpg", "Ficha t\u00e9cnica": "Habitaba la zona central (Maule a Biob\u00edo). En Peligro Cr\u00edtico (CR) y probablemente extinta, su desaparici\u00f3n se vincula a la p\u00e9rdida de bosque nativo y la propagaci\u00f3n de enfermedades f\u00fangicas.", "prop": 0.09027777777777778, "x0": 0.6944444444444444, "x1": 0.7847222222222222, "xmid": 0.7395833333333333, "etiqueta_grafico": "Ranita de Darwin del Norte"}, {"Etiqueta": 45, "Nombre cient\u00edfico": "Pristidactylus alvaroi", "Nombre com\u00fan": "Lagarto gru\u00f1idor de \u00c1lvaro", "Clase": "Reptilia", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 9, "Protagonista": 7, "% Protagonismo": "77,77777778", "Foto": 8, "Link foto": "https://live.staticflickr.com/65535/55264324885_5b4d80044b.jpg", "Ficha t\u00e9cnica": "End\u00e9mico de la Cordillera de la Costa central. En Peligro Cr\u00edtico (CR), emite sonidos al ser amenazado. Su h\u00e1bitat en cumbres boscosas como el Cerro El Roble es vulnerable a incendios.", "prop": 0.0625, "x0": 0.7847222222222222, "x1": 0.8472222222222222, "xmid": 0.8159722222222222, "etiqueta_grafico": "Lagarto gru\u00f1idor de \u00c1lvaro"}, {"Etiqueta": 25, "Nombre cient\u00edfico": "Eulidia yarrellii", "Nombre com\u00fan": "Picaflor de Arica", "Clase": "Aves", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 8, "Protagonista": 8, "% Protagonismo": "100", "Foto": 8, "Link foto": "https://live.staticflickr.com/65535/55264061478_8273248e77.jpg", "Ficha t\u00e9cnica": "Habita valles de la Regi\u00f3n de Arica. En Peligro Cr\u00edtico (CR), es el ave m\u00e1s peque\u00f1a del pa\u00eds. Su extinci\u00f3n es inminente debido al uso de pesticidas y p\u00e9rdida de vegetaci\u00f3n.", "prop": 0.05555555555555555, "x0": 0.8472222222222222, "x1": 0.9027777777777778, "xmid": 0.875, "etiqueta_grafico": "Picaflor de Arica"}, {"Etiqueta": 214, "Nombre cient\u00edfico": "Hippocamelus bisulcus", "Nombre com\u00fan": "Huemul", "Clase": "Mammalia", "RCE": "EN", "End\u00e9mica": "No", "Apariciones": 8, "Protagonista": 5, "% Protagonismo": "62,5", "Foto": 8, "Link foto": "https://live.staticflickr.com/65535/55264157039_b62cefd96c.jpg", "Ficha t\u00e9cnica": "Reside en los bosques andino-patag\u00f3nicos. En estado En Peligro (EN), este ciervo emblem\u00e1tico es Monumento Natural y enfrenta amenazas como ataques de perros, enfermedades ganaderas y fragmentaci\u00f3n de h\u00e1bitat.", "prop": 0.05555555555555555, "x0": 0.9027777777777778, "x1": 0.9583333333333334, "xmid": 0.9305555555555556, "etiqueta_grafico": "Huemul"}, {"Etiqueta": 17, "Nombre cient\u00edfico": "Chilina angusta", "Nombre com\u00fan": "Caracol de Paposo", "Clase": "Gastropoda", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 4, "Protagonista": 1, "% Protagonismo": "25", "Foto": 3, "Link foto": "https://live.staticflickr.com/65535/55264061428_f0682c5434.jpg", "Ficha t\u00e9cnica": "Habita exclusivamente en los oasis de niebla de Antofagasta. Clasificado en Peligro Cr\u00edtico (CR), este molusco depende de la humedad de las nubes y sufre por la sequ\u00eda extrema.", "prop": 0.027777777777777776, "x0": 0.9583333333333334, "x1": 0.9861111111111112, "xmid": 0.9722222222222223, "etiqueta_grafico": "Caracol de Paposo"}, {"Etiqueta": 50, "Nombre cient\u00edfico": "Sclerostomulus nitidus", "Nombre com\u00fan": "Borrachito", "Clase": "Insecta", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 1, "Protagonista": 0, "% Protagonismo": "0", "Foto": 1, "Link foto": "https://live.staticflickr.com/65535/55264157119_fa2a0bec27.jpg", "Ficha t\u00e9cnica": "Peque\u00f1a ave de valles del norte grande. En Peligro (EN), es un insect\u00edvoro esencial para su ecosistema, aunque la degradaci\u00f3n de los valles des\u00e9rticos amenaza su equilibrio local.", "prop": 0.006944444444444444, "x0": 0.9861111111111112, "x1": 0.9930555555555556, "xmid": 0.9895833333333334, "etiqueta_grafico": ""}, {"Etiqueta": 51, "Nombre cient\u00edfico": "Sephanoides fernandensis", "Nombre com\u00fan": "Picaflor de Juan Fern\u00e1ndez", "Clase": "Aves", "RCE": "CR", "End\u00e9mica": "S\u00cd", "Apariciones": 1, "Protagonista": 0, "% Protagonismo": "0", "Foto": 1, "Link foto": "https://live.staticflickr.com/65535/55264061568_47bfe31dc6.jpg", "Ficha t\u00e9cnica": "Exclusivo de la Isla Robinson Crusoe. En Peligro Cr\u00edtico (CR), destaca por su plumaje rojizo \u00fanico. Es amenazado severamente por gatos, coat\u00edes y la invasi\u00f3n de plantas ex\u00f3ticas en su h\u00e1bitat.", "prop": 0.006944444444444444, "x0": 0.9930555555555556, "x1": 1.0, "xmid": 0.9965277777777778, "etiqueta_grafico": ""}]}};
+                        var spec = {
+                          "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+                          "background": "#FBF8F0",
+                          "config": {
+                            "view": {"continuousWidth": 300, "continuousHeight": 300}
+                          },
+                          "title": {
+                            "text": "LA ASFIXIA DEL ESPACIO MEDIÁTICO",
+                            "subtitle": ["Mientras algunas especies brillan en su protagonismo, otras son invisibles para los medios."],
+                            "color": "#91532B",
+                            "fontSize": 22,
+                            "subtitleColor": "#1F3D5B"
+                          },
+                          "data": {"name": "dataset3"},
+                          "layer": [
+                            {
+                              "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+                              "encoding": {
+                                "x": {"field": "x0", "type": "quantitative", "title": "Distribución del Espacio Mediático", "axis": {"format": "%"}},
+                                "x2": {"field": "x1"},
+                                "y": {"value": 50},
+                                "y2": {"value": 350},
+                                "color": {
+                                  "field": "RCE",
+                                  "type": "nominal",
+                                  "title": "Categoría de Riesgo",
+                                  "scale": {"domain": ["CR", "EN"], "range": ["#86223E", "#91532B"]}
+                                },
+                                "tooltip": [
+                                  {"field": "Nombre común", "type": "nominal", "title": "Nombre Común"},
+                                  {"field": "Nombre científico", "type": "nominal", "title": "Nombre Científico"},
+                                  {"field": "RCE", "type": "nominal", "title": "Estado de Conservación"},
+                                  {"field": "Ficha técnica", "type": "nominal", "title": "Ficha Técnica Descriptiva"}
+                                ]
+                              }
+                            },
+                            {
+                              "mark": {"type": "text", "align": "center", "angle": 270, "baseline": "middle", "color": "white", "fontSize": 12, "fontWeight": "bold"},
+                              "encoding": {
+                                "x": {"field": "xmid", "type": "quantitative"},
+                                "y": {"value": 200},
+                                "text": {"field": "etiqueta_grafico", "type": "nominal"}
+                              }
+                            }
+                          ],
+                          "width": "container",
+                          "height": 400,
+                          "datasets": {
+                            "dataset3": [
+                              {
+                                "Nombre científico": "Spheniscus humboldti", "Nombre común": "Pingüino de Humboldt", "RCE": "EN",
+                                "x0": 0.0, "x1": 0.5277777777777778, "xmid": 0.2638888888888889,
+                                "etiqueta_grafico": "Pingüino de Humboldt",
+                                "Ficha técnica": "Vive en costas e islas del norte y centro de Chile. En Peligro (EN), nidifica en cavidades de guano y se ve afectado por la sobrepesca y el cambio climático."
+                              },
+                              {
+                                "Nombre científico": "Rhinoderma darwinii", "Nombre común": "Ranita de Darwin", "RCE": "EN",
+                                "x0": 0.5277777777777778, "x1": 0.6944444444444444, "xmid": 0.6111111111111112,
+                                "etiqueta_grafico": "Ranita de Darwin",
+                                "Ficha técnica": "Habita bosques templados del sur. En estado En Peligro (EN), destaca porque el macho incuba los renacuajos en su saco vocal. Sus poblaciones declinan por el hongo quítrido y la deforestación."
+                              },
+                              {
+                                "Nombre científico": "Rhinoderma rufum", "Nombre común": "Ranita de Darwin del Norte", "RCE": "CR",
+                                "x0": 0.6944444444444444, "x1": 0.7847222222222222, "xmid": 0.7395833333333333,
+                                "etiqueta_grafico": "Ranita de Darwin del Norte",
+                                "Ficha técnica": "Habitaba la zona central (Maule a Biobío). En Peligro Crítico (CR) y probablemente extinta, su desaparición se vincula a la pérdida de bosque nativo y la propagación de enfermedades fúngicas."
+                              },
+                              {
+                                "Nombre científico": "Pristidactylus alvaroi", "Nombre común": "Lagarto gruñidor de Álvaro", "RCE": "CR",
+                                "x0": 0.7847222222222222, "x1": 0.8472222222222222, "xmid": 0.8159722222222222,
+                                "etiqueta_grafico": "Lagarto gruñidor de Álvaro",
+                                "Ficha técnica": "Endémico de la Cordillera de la Costa central. En Peligro Crítico (CR), emite sonidos al ser amenazado. Su hábitat en cumbres boscosas como el Cerro El Roble es vulnerable a incendios."
+                              },
+                              {
+                                "Nombre científico": "Eulidia yarrellii", "Nombre común": "Picaflor de Arica", "RCE": "CR",
+                                "x0": 0.8472222222222222, "x1": 0.9027777777777778, "xmid": 0.875,
+                                "etiqueta_grafico": "Picaflor de Arica",
+                                "Ficha técnica": "Habita valles de la Región de Arica. En Peligro Crítico (CR), es el ave más pequeña del país. Su extinción es inminente debido al uso de pesticidas y pérdida de vegetación."
+                              },
+                              {
+                                "Nombre científico": "Hippocamelus bisulcus", "Nombre común": "Huemul", "RCE": "EN",
+                                "x0": 0.9027777777777778, "x1": 0.9583333333333334, "xmid": 0.9305555555555556,
+                                "etiqueta_grafico": "Huemul",
+                                "Ficha técnica": "Reside en los bosques andino-patagónicos. En estado En Peligro (EN), este ciervo emblemático es Monumento Natural y enfrenta amenazas como ataques de perros, enfermedades ganaderas y fragmentación de hábitat."
+                              },
+                              {
+                                "Nombre científico": "Chilina angusta", "Nombre común": "Caracol de Paposo", "RCE": "CR",
+                                "x0": 0.9583333333333334, "x1": 0.9861111111111112, "xmid": 0.9722222222222223,
+                                "etiqueta_grafico": "Caracol de Paposo",
+                                "Ficha técnica": "Habita exclusivamente en los oasis de niebla de Antofagasta. Clasificado en Peligro Crítico (CR), este molusco depende de la humedad de las nubes y sufre por la sequía extrema."
+                              },
+                              {
+                                "Nombre científico": "Sclerostomulus nitidus", "Nombre común": "Borrachito", "RCE": "CR",
+                                "x0": 0.9861111111111112, "x1": 0.9930555555555556, "xmid": 0.9895833333333334,
+                                "etiqueta_grafico": "",
+                                "Ficha técnica": "Pequeña ave de valles del norte grande. En Peligro (EN), es un insectívoro esencial para su ecosistema, aunque la degradación de los valles desérticos amenaza su equilibrio local."
+                              },
+                              {
+                                "Nombre científico": "Sephanoides fernandensis", "Nombre común": "Picaflor de Juan Fernández", "RCE": "CR",
+                                "x0": 0.9930555555555556, "x1": 1.0, "xmid": 0.9965277777777778,
+                                "etiqueta_grafico": "",
+                                "Ficha técnica": "Exclusivo de la Isla Robinson Crusoe. En Peligro Crítico (CR), destaca por su plumaje rojizo único. Es amenazado severamente por gatos, coatíes y la invasión de plantas exóticas en su hábitat."
+                              }
+                            ]
+                          }
+                        };
                         var embedOpt = {"mode": "vega-lite"};
                         vegaEmbed("#vis-carolina", spec, embedOpt).catch(console.error);
                       })(vegaEmbed);

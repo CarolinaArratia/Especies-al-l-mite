@@ -221,15 +221,29 @@ a:hover {
 }
 
 /* =========================================
-   FICHAS EN ACORDEÓN CON SLIDER
+   FICHAS EN ACORDEÓN CON SLIDER (ESTILO CENTRADO)
 ========================================= */
 
+.bloque-interactivo {
+    display: flex;
+    flex-direction: column; /* Apila el texto arriba y la ficha abajo */
+    width: 100%;
+    align-items: center; 
+    margin-bottom: 40px;
+    gap: 25px; /* Espacio exacto entre el texto y el botón verde */
+}
+
+.texto-izquierdo {
+    width: 100%; /* El texto ocupa todo el ancho */
+    box-sizing: border-box;
+}
+
 .ficha-derecha {
-    width: 50%;
+    width: 100%; /* La caja del botón ocupa todo el ancho */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Fuerza al botón a ubicarse en el centro de su espacio */
+    align-items: center; /* Centra el botón perfectamente */
 }
 
 .acordeon-btn {
@@ -237,7 +251,7 @@ a:hover {
     color: white;
     cursor: pointer;
     padding: 14px 30px;
-    width: max-content; /* Hace que el botón tome el tamaño justo de su texto */
+    width: max-content; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,7 +263,7 @@ a:hover {
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 1rem;
-    margin: 0 auto; /* Centra la caja del botón horizontalmente */
+    margin: 0 auto; 
 }
 
 .acordeon-btn.active, .acordeon-btn:hover {
@@ -273,6 +287,7 @@ a:hover {
     border-radius: 12px;
     margin-top: 15px;
     width: 100%;
+    max-width: 500px; /* Ancho máximo para que el carrusel no se vea gigante */
     box-sizing: border-box;
     text-align: left; 
 }
@@ -290,7 +305,7 @@ a:hover {
 
 .slider-contenedor {
     position: relative;
-    height: 180px; /* Alto fijo del recuadro de la ficha */
+    height: 180px; 
     background-color: #fff;
     border: 2px solid var(--interfaz);
     border-radius: 8px;
