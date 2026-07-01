@@ -20,7 +20,7 @@ body {
     background-color: var(--fondo);
     color: var(--texto);
     font-family: var(--fuente-cuerpo);
-    line-height: 1.8;
+    line-height: 1.5; /* Interlineado achicado */
     margin: 0;
     padding: 0;
 }
@@ -46,6 +46,7 @@ body {
 .navbar .logo-nav {
     font-family: var(--fuente-titulos);
     color: var(--titulos);
+    font-weight: 700;
     font-size: 1.2rem;
 }
 
@@ -53,7 +54,7 @@ body {
     margin-left: 20px;
     font-size: 0.95rem;
     color: var(--texto);
-    font-weight: normal;
+    font-weight: bold; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -64,47 +65,40 @@ body {
 }
 
 /* =========================================
-   LAYOUT: MÁRGENES Y 75% / 25% PROPORCIÓN
+   LAYOUT: MÁRGENES ESTRECHOS (75% IZQ / 25% DER)
 ========================================= */
 .contenedor-estrecho {
     max-width: 1300px; 
     width: 92%;
-    margin: 100px auto 50px auto; 
+    margin: 100px auto 40px auto; 
 }
 
 .ancho-texto {
+    width: 75%; /* El texto ocupa solo el 75% de la pantalla */
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* El header también respeta el 75% */
+.header-principal {
     width: 75%;
     padding-right: 40px;
     box-sizing: border-box;
 }
 
-.bloque-interactivo {
-    display: flex;
-    width: 100%;
-    align-items: flex-start;
-    margin-bottom: 24px;
-}
-
-.texto-izquierdo {
-    width: 75%;
-    padding-right: 40px;
-    box-sizing: border-box;
-}
-
-.ficha-derecha {
-    width: 25%;
-    box-sizing: border-box;
+.cronica-seccion {
+    margin-bottom: 60px;
 }
 
 /* =========================================
-   DISEÑO DE TEXTOS Y ESTILOS BASE
+   DISEÑO DE TEXTOS Y TÍTULOS (Más grandes y BOLD)
 ========================================= */
 .espacio-banner {
     width: 100%;
     min-height: 250px;
-    background-color: #E8E5DC; 
+    background-color: transparent; 
     border: 2px dashed var(--interfaz);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,51 +114,52 @@ body {
 h1, h2, h3 {
     font-family: var(--fuente-titulos);
     color: var(--titulos);
-    font-weight: 400;
+    font-weight: 700; /* BOLD */
 }
 
 h1 {
-    font-size: 2.8rem;
-    line-height: 1.2;
-    margin-bottom: 15px;
+    font-size: 3rem; /* Agrandado */
+    line-height: 1.1;
+    margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 2.2rem;
-    margin-top: 60px;
-    margin-bottom: 25px;
+    font-size: 2.3rem; /* Agrandado */
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 h3 {
-    font-size: 1.5rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
+    font-size: 1.6rem; /* Agrandado */
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .bajada-principal {
     font-size: 1.3rem;
     font-style: italic;
     color: var(--texto);
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .linea-divisoria {
     border: 0;
-    height: 3px;
+    height: 4px; 
     background-color: var(--destacado-burgundy);
-    width: 100px;
-    margin: 25px 0;
+    width: 80px;
+    margin: 20px 0;
     border-radius: 2px;
 }
 
 p {
     font-size: 1.15rem;
-    text-align: justify; /* Textos justificados */
-    margin-bottom: 24px;
+    text-align: justify; /* <-- TEXTO JUSTIFICADO AQUÍ */
+    margin-bottom: 18px; 
 }
 
 strong {
     color: var(--destacado-burgundy);
+    font-weight: 700;
 }
 
 a {
@@ -179,14 +174,15 @@ a:hover {
 }
 
 /* =========================================
-   GRÁFICOS
+   GRÁFICOS (Dentro del 75%)
 ========================================= */
 .grafico-container {
     background-color: var(--recuadros);
-    padding: 30px;
+    padding: 20px; 
     border-radius: 12px;
-    margin: 40px 0;
+    margin: 30px 0; 
     text-align: center;
+    width: 100%; /* Ocupa el 100% del contenedor ancho-texto (75%) */
 }
 
 .grafico-container img {
@@ -202,84 +198,83 @@ a:hover {
     color: var(--texto);
     text-align: center;
     font-style: italic;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 /* =========================================
-   FICHAS INTERACTIVAS (SLIDERS)
+   FICHAS INTERACTIVAS (ACORDEÓN JS)
 ========================================= */
-.ficha-interactiva {
+/* Ahora la ficha está centrada pero DENTRO del ancho del 75% */
+.ficha-centrada {
+    width: 90%; /* Un poco más angosta que el texto para que resalte */
+    max-width: 600px;
+    margin: 30px auto; 
+}
+
+.acordeon-btn {
     background-color: var(--recuadros);
-    border: 2px solid var(--interfaz);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.ficha-header {
-    font-family: var(--fuente-titulos);
     color: var(--destacado-burgundy);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--interfaz);
-    padding-bottom: 5px;
-}
-
-.slider-contenedor {
-    position: relative;
-    height: 180px; 
-    background-color: #fff;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    font-size: 0.9rem;
-    color: var(--texto);
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.slide.activa {
-    opacity: 1;
-    z-index: 10;
-}
-
-.controles {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn-slider {
-    background-color: var(--interfaz);
-    color: #fff;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: 2px solid var(--interfaz);
+    outline: none;
+    transition: 0.3s;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
 }
 
-.btn-slider:hover {
-    background-color: var(--titulos);
+.acordeon-btn.active, .acordeon-btn:hover {
+    background-color: #e3e198; 
+}
+
+.icono-acordeon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.acordeon-panel {
+    padding: 0 15px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-left: 2px solid var(--interfaz);
+    border-right: 2px solid var(--interfaz);
+    border-bottom: 2px solid transparent; 
+    border-radius: 0 0 8px 8px;
+}
+
+.acordeon-btn.active + .acordeon-panel {
+    border-bottom: 2px solid var(--interfaz);
+    margin-bottom: 15px;
+}
+
+.contenido-ficha {
+    padding: 15px 0;
+    color: var(--texto);
+    text-align: center;
+}
+
+.contenido-ficha p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
 }
 
 footer {
-    margin-top: 60px;
+    margin-top: 50px;
     padding-bottom: 40px;
     border-top: 2px solid var(--interfaz);
-    text-align: center;
+    text-align: left; 
     font-size: 0.95rem;
+    padding-top: 20px;
+    width: 75%; /* El footer también respeta el 75% */
 }
