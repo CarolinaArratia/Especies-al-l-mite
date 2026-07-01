@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="estilogaleria.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
         </div>
     </nav>
 
-    <div class="contenedor-estrecho">
+    <div class="contenedor-central">
         
         <header class="header-galeria">
             <h1>El Muro de la Invisibilidad</h1>
@@ -30,7 +30,7 @@
         </header>
 
         <div class="guia-borrachito-galeria animar-seccion">
-            <img src="image_ad2965.png" alt="Borrachito Guía Turístico" style="height: 100px;">
+            <img src="borrachito.png" alt="Borrachito Guía Turístico" class="img-borrachito-guia">
             <p class="mensaje-borrachito">"¡Hola! Soy Borrachito, tu guía turístico. Estas especies están ocultas en el espacio digital. Selecciona una categoría y pasa tu cursor sobre las sombras para romper la asfixia mediática y darles visibilidad."</p>
         </div>
 
@@ -47,7 +47,7 @@
         <div class="grid-galeria" id="muro-especies">
             
             <div class="tarjeta-especie animar-seccion" data-categoria="cr insecto">
-                <img src="https://via.placeholder.com/400x500/86223E/ffffff?text=FOTO+REAL" alt="Borrachito" class="img-especie">
+                <img src="borrachito_real.jpeg" alt="Borrachito" class="img-especie">
                 <div class="info-especie">
                     <h3>Borrachito</h3>
                     <p>Sclerostomulus nitidus</p>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="tarjeta-especie animar-seccion" data-categoria="cr anfibio">
-                <img src="https://via.placeholder.com/400x500/187670/ffffff?text=FOTO+REAL" alt="Ranita de Darwin del Norte" class="img-especie">
+                <img src="ranita_darwin_real.jpeg" alt="Ranita de Darwin del Norte" class="img-especie">
                 <div class="info-especie">
                     <h3>Ranita de Darwin del Norte</h3>
                     <p>Rhinoderma rufum</p>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="tarjeta-especie animar-seccion" data-categoria="en ave">
-                <img src="https://via.placeholder.com/400x500/529E47/ffffff?text=FOTO+REAL" alt="Pingüino de Humboldt" class="img-especie">
+                <img src="pinguino_humboldt_real.jpeg" alt="Pingüino de Humboldt" class="img-especie">
                 <div class="info-especie">
                     <h3>Pingüino de Humboldt</h3>
                     <p>Spheniscus humboldti</p>
@@ -74,7 +74,7 @@
             </div>
 
             <div class="tarjeta-especie animar-seccion" data-categoria="en mamifero">
-                <img src="https://via.placeholder.com/400x500/91532B/ffffff?text=FOTO+REAL" alt="Chinchilla Costina" class="img-especie">
+                <img src="chinchilla_costina_real.jpeg" alt="Chinchilla Costina" class="img-especie">
                 <div class="info-especie">
                     <h3>Chinchilla Costina</h3>
                     <p>Chinchilla lanigera</p>
@@ -93,7 +93,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             
-            // 1. Animaciones ScrollReveal
+            // 1. Animaciones ScrollReveal (suaves)
             ScrollReveal().reveal('.animar-seccion', { 
                 delay: 200, 
                 distance: '30px', 
