@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    // ==========================================
     // 1. ANIMACIÓN DE APARICIÓN (ScrollReveal)
-    // ==========================================
     ScrollReveal().reveal('.animar-seccion', { 
         delay: 200, 
         distance: '30px', 
@@ -25,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         origin: 'bottom'
     });
 
-    // ==========================================
     // 2. FICHAS INTERACTIVAS (Acordeón)
-    // ==========================================
     var acordeones = document.querySelectorAll(".acordeon-btn");
 
     acordeones.forEach(function(btn) {
@@ -47,21 +43,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // ==========================================
-    // 3. MENÚ SUPERIOR CONTRAÍBLE AL SCROLLEAR
-    // ==========================================
+    // 3. MENÚ CONTRAÍBLE (SCROLL)
+    let lastScrollTop = 0;
     const navbar = document.getElementById('menu-superior');
 
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Si el usuario baja más de 80px, la barra se contrae
-        if (scrollTop > 80) {
-            navbar.classList.add('contraida');
-        } else {
-            // Si sube al tope, la barra vuelve a su tamaño normal
-            navbar.classList.remove('contraida');
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            navbar.style.transform = 'translateY(-100%)'; 
+        } 
+        else if (scrollTop < lastScrollTop) {
+            navbar.style.transform = 'translateY(0)';     
         }
+        
+        if (scrollTop <= 50) {
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop;
     });
 
 });

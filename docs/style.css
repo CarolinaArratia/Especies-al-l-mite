@@ -20,13 +20,13 @@ body {
     background-color: var(--fondo);
     color: var(--texto);
     font-family: var(--fuente-cuerpo);
-    line-height: 1.5; /* Interlineado achicado */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 /* =========================================
-   MENÚ SUPERIOR
+   MENÚ SUPERIOR Y ANIMACIÓN
 ========================================= */
 .navbar {
     position: fixed; 
@@ -65,40 +65,28 @@ body {
 }
 
 /* =========================================
-   LAYOUT: MÁRGENES ESTRECHOS (75% IZQ / 25% DER)
+   LAYOUT: MÁRGENES TIPO WORD
 ========================================= */
-.contenedor-estrecho {
-    max-width: 1300px; 
-    width: 92%;
-    margin: 100px auto 40px auto; 
-}
-
-.ancho-texto {
-    width: 75%; /* El texto ocupa solo el 75% de la pantalla */
-    padding-right: 40px;
-    box-sizing: border-box;
-}
-
-/* El header también respeta el 75% */
-.header-principal {
-    width: 75%;
-    padding-right: 40px;
-    box-sizing: border-box;
+.contenedor-central {
+    max-width: 850px; /* ACÁ ESTÁ EL MARGEN: El texto no pasará de 850px de ancho */
+    margin: 120px auto 50px auto; /* Lo centra en la pantalla */
+    padding: 0 30px; /* Margen de seguridad para celulares */
 }
 
 .cronica-seccion {
+    width: 100%;
     margin-bottom: 60px;
 }
 
 /* =========================================
-   DISEÑO DE TEXTOS Y TÍTULOS (Más grandes y BOLD)
+   DISEÑO DE TEXTOS Y TÍTULOS
 ========================================= */
 .espacio-banner {
     width: 100%;
     min-height: 250px;
     background-color: transparent; 
     border: 2px dashed var(--interfaz);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +94,7 @@ body {
 }
 
 .espacio-banner img {
-    max-height: 200px;
+    max-height: 180px;
     width: auto;
     border: none;
 }
@@ -115,24 +103,25 @@ h1, h2, h3 {
     font-family: var(--fuente-titulos);
     color: var(--titulos);
     font-weight: 700; /* BOLD */
+    text-align: center; /* Títulos centrados */
 }
 
 h1 {
-    font-size: 3rem; /* Agrandado */
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 2.3rem; /* Agrandado */
-    margin-top: 40px;
+    font-size: 3rem; 
+    line-height: 1.2;
     margin-bottom: 15px;
 }
 
+h2 {
+    font-size: 2.3rem; 
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
 h3 {
-    font-size: 1.6rem; /* Agrandado */
-    margin-top: 30px;
-    margin-bottom: 10px;
+    font-size: 1.6rem; 
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 .bajada-principal {
@@ -140,6 +129,7 @@ h3 {
     font-style: italic;
     color: var(--texto);
     margin-top: 15px;
+    text-align: center;
 }
 
 .linea-divisoria {
@@ -147,14 +137,15 @@ h3 {
     height: 4px; 
     background-color: var(--destacado-burgundy);
     width: 80px;
-    margin: 20px 0;
+    margin: 25px auto; /* Línea centrada */
     border-radius: 2px;
 }
 
+/* TEXTO DE LAS CRÓNICAS JUSTIFICADO */
 p {
     font-size: 1.15rem;
-    text-align: justify; /* <-- TEXTO JUSTIFICADO AQUÍ */
-    margin-bottom: 18px; 
+    text-align: justify; /* Justificado como querías */
+    margin-bottom: 22px;
 }
 
 strong {
@@ -174,15 +165,16 @@ a:hover {
 }
 
 /* =========================================
-   GRÁFICOS (Dentro del 75%)
+   GRÁFICOS
 ========================================= */
 .grafico-container {
     background-color: var(--recuadros);
     padding: 20px; 
     border-radius: 12px;
-    margin: 30px 0; 
+    margin: 40px 0; 
+    width: 100%;
     text-align: center;
-    width: 100%; /* Ocupa el 100% del contenedor ancho-texto (75%) */
+    box-sizing: border-box;
 }
 
 .grafico-container img {
@@ -198,25 +190,23 @@ a:hover {
     color: var(--texto);
     text-align: center;
     font-style: italic;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 0;
 }
 
 /* =========================================
-   FICHAS INTERACTIVAS (ACORDEÓN JS)
+   FICHAS EN ACORDEÓN
 ========================================= */
-/* Ahora la ficha está centrada pero DENTRO del ancho del 75% */
 .ficha-centrada {
-    width: 90%; /* Un poco más angosta que el texto para que resalte */
-    max-width: 600px;
-    margin: 30px auto; 
+    width: 100%;
+    margin: 30px 0; /* Espacio arriba y abajo en el texto */
 }
 
 .acordeon-btn {
     background-color: var(--recuadros);
     color: var(--destacado-burgundy);
     cursor: pointer;
-    padding: 15px;
+    padding: 15px 20px;
     width: 100%;
     text-align: left;
     border: 2px solid var(--interfaz);
@@ -224,7 +214,7 @@ a:hover {
     transition: 0.3s;
     font-family: var(--fuente-titulos);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -236,7 +226,7 @@ a:hover {
 }
 
 .icono-acordeon {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
@@ -258,23 +248,22 @@ a:hover {
 }
 
 .contenido-ficha {
-    padding: 15px 0;
-    color: var(--texto);
+    padding: 20px 0;
     text-align: center;
 }
 
 .contenido-ficha p {
-    text-align: center;
+    text-align: center; /* Los datos de la ficha sí van centrados */
     margin-bottom: 15px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
     padding-bottom: 40px;
     border-top: 2px solid var(--interfaz);
-    text-align: left; 
+    text-align: center; 
     font-size: 0.95rem;
     padding-top: 20px;
-    width: 75%; /* El footer también respeta el 75% */
+    width: 100%;
 }
