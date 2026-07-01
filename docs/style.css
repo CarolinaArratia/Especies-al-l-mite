@@ -1,565 +1,353 @@
- /* Variables de la Identidad Visual */
-
+/* Variables de la Identidad Visual */
 :root {
-
     --fondo: #FBF8F0;
-
     --texto: #1F3D5B;
-
     --titulos: #91532B;
-
     --enlaces: #0695D1;
-
     --datos-verde: #529E47;
-
     --interfaz: #187670;
-
     --destacado-burgundy: #86223E;
-
     --recuadros: #EFEDA0;
-
     --fuente-titulos: 'Capriola', sans-serif;
-
     --fuente-cuerpo: 'Lora', serif;
-
 }
-
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
-
-
 
 body {
-
     background-color: var(--fondo);
-
     color: var(--texto);
-
     font-family: var(--fuente-cuerpo);
-
     line-height: 1.6;
-
     margin: 0;
-
     padding: 0;
-
 }
-
-
 
 /* =========================================
-
    MENÚ SUPERIOR Y ANIMACIÓN
-
 ========================================= */
-
 .navbar {
-
     position: fixed;
-
     top: 0;
-
     width: 100%;
-
     background-color: var(--fondo);
-
     border-bottom: 2px solid var(--interfaz);
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 15px 40px;
-
     box-sizing: border-box;
-
     z-index: 1000;
-
     transition: all 0.4s ease-in-out;
-
 }
-
-
-
-/* Esta clase se añade con JS al hacer scroll */
 
 .navbar.contraida {
-
     padding: 5px 40px;
-
     background-color: rgba(251, 248, 240, 0.95);
-
 }
-
-
 
 .navbar .logo-nav {
-
     font-family: var(--fuente-titulos);
-
     color: var(--titulos);
-
     font-weight: 700;
-
     font-size: 1.2rem;
-
     transition: font-size 0.4s ease;
-
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-
+.img-logo-nav {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    transition: height 0.4s ease;
+}
 
 .navbar.contraida .logo-nav {
-
     font-size: 1rem;
-
 }
 
-
+.navbar.contraida .img-logo-nav {
+    height: 26px;
+}
 
 .navbar .enlaces a {
-
     margin-left: 20px;
-
     font-size: 0.95rem;
-
     color: var(--texto);
-
     font-weight: bold;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
 }
-
-
 
 .navbar .enlaces a:hover {
-
     color: var(--enlaces);
-
     text-decoration: none;
-
 }
-
-
 
 /* =========================================
-
    LAYOUT CENTRADO
-
 ========================================= */
-
 .contenedor-central {
-
-    max-width: 850px; /* Ancho máximo para lectura cómoda y respetar el 75% */
-
+    max-width: 850px; 
     width: 90%;
-
     margin: 120px auto 50px auto;
-
     display: flex;
-
     flex-direction: column;
-
-    align-items: center; /* Centra los hijos */
-
+    align-items: center; 
 }
-
-
 
 .cronica-seccion {
-
     width: 100%;
-
     margin-bottom: 60px;
-
 }
-
-
 
 /* =========================================
-
    DISEÑO DE TEXTOS Y TÍTULOS
-
 ========================================= */
-
 .espacio-banner {
-
     width: 100%;
-
     min-height: 200px;
-
     background-color: transparent;
-
     border: 2px dashed var(--interfaz);
-
     margin-bottom: 30px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 8px;
-
 }
-
-
 
 .espacio-banner img {
-
     max-height: 180px;
-
     width: auto;
-
     border: none;
-
 }
-
-
 
 h1, h2, h3 {
-
     font-family: var(--fuente-titulos);
-
     color: var(--titulos);
-
     font-weight: 700;
-
-    text-align: center; /* Títulos centrados */
-
+    text-align: center; 
 }
-
-
 
 h1 {
-
     font-size: 3rem;
-
     line-height: 1.2;
-
     margin-bottom: 10px;
-
 }
-
-
 
 h2 {
-
     font-size: 2.3rem;
-
     margin-top: 40px;
-
     margin-bottom: 20px;
-
 }
-
-
 
 h3 {
-
     font-size: 1.6rem;
-
     margin-top: 30px;
-
     margin-bottom: 15px;
-
 }
-
-
 
 .bajada-principal {
-
     font-size: 1.3rem;
-
     font-style: italic;
-
     color: var(--texto);
-
     margin-top: 15px;
-
     text-align: center;
-
 }
-
-
 
 .linea-divisoria {
-
     border: 0;
-
     height: 4px;
-
     background-color: var(--destacado-burgundy);
-
-    width: 80px;
-
-    margin: 20px auto; /* Línea centrada */
-
+    width: 100%; 
+    margin: 20px auto; 
     border-radius: 2px;
-
 }
-
-
 
 p {
-
     font-size: 1.15rem;
-
-    text-align: justify; /* Textos justificados */
-
+    text-align: justify; 
     margin-bottom: 20px;
-
 }
-
-
 
 strong {
-
     color: var(--destacado-burgundy);
-
     font-weight: 700;
-
 }
-
-
 
 a {
-
     color: var(--enlaces);
-
     text-decoration: none;
-
     font-weight: bold;
-
     transition: color 0.3s ease;
-
 }
-
-
 
 a:hover {
-
     text-decoration: underline;
-
 }
-
-
 
 /* =========================================
-
    GRÁFICOS
-
 ========================================= */
-
 .grafico-container {
-
     background-color: var(--recuadros);
-
     padding: 20px;
-
     border-radius: 12px;
-
     margin: 40px auto;
-
     width: 100%;
-
     text-align: center;
-
     box-sizing: border-box;
-
 }
-
-
 
 .grafico-container img {
-
     width: 100%;
-
     height: auto;
-
     border-bottom: 5px solid var(--datos-verde);
-
     border-radius: 4px;
-
     display: block;
-
 }
-
-
 
 .epigrafe {
-
     font-size: 0.95rem;
-
     color: var(--texto);
-
     text-align: center;
-
     font-style: italic;
-
     margin-top: 15px;
-
     margin-bottom: 0;
-
 }
-
-
 
 /* =========================================
-
-   FICHAS EN ACORDEÓN (CENTRADAS)
-
+   FICHAS EN ACORDEÓN CON SLIDER
 ========================================= */
 
-.ficha-centrada {
-
-    width: 100%;
-
-    margin: 35px auto; /* Ficha centrada en la página */
-
+.ficha-derecha {
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Fuerza al botón a ubicarse en el centro de su espacio */
 }
-
-
 
 .acordeon-btn {
-
-    background-color: var(--recuadros);
-
-    color: var(--destacado-burgundy);
-
+    background-color: var(--interfaz);
+    color: white;
     cursor: pointer;
-
-    padding: 15px 20px;
-
-    width: 100%;
-
-    text-align: left;
-
-    border: 2px solid var(--interfaz);
-
-    outline: none;
-
-    transition: 0.3s;
-
-    font-family: var(--fuente-titulos);
-
-    font-weight: 700;
-
-    font-size: 1.1rem;
-
+    padding: 14px 30px;
+    width: max-content; /* Hace que el botón tome el tamaño justo de su texto */
     display: flex;
-
-    justify-content: space-between;
-
+    justify-content: center;
     align-items: center;
-
-    border-radius: 8px;
-
+    gap: 10px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 auto; /* Centra la caja del botón horizontalmente */
 }
-
-
 
 .acordeon-btn.active, .acordeon-btn:hover {
-
-    background-color: #e3e198;
-
+    background-color: var(--destacado-burgundy);
+    transform: translateY(-2px);
 }
-
-
 
 .icono-acordeon {
-
     font-size: 1.4rem;
-
     font-weight: bold;
-
+    line-height: 1;
 }
 
-
-
+/* PANEL ACORDEÓN */
 .acordeon-panel {
-
-    padding: 0 15px;
-
     background-color: white;
-
     max-height: 0;
-
     overflow: hidden;
-
     transition: max-height 0.3s ease-out;
-
-    border-left: 2px solid var(--interfaz);
-
-    border-right: 2px solid var(--interfaz);
-
-    border-bottom: 2px solid transparent;
-
-    border-radius: 0 0 8px 8px;
-
+    border: 2px solid transparent;
+    border-radius: 12px;
+    margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left; 
 }
-
-
 
 .acordeon-btn.active + .acordeon-panel {
-
-    border-bottom: 2px solid var(--interfaz);
-
+    border: 2px solid var(--interfaz);
     margin-bottom: 15px;
-
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-
-
-.contenido-ficha {
-
-    padding: 20px 0;
-
-    text-align: center;
-
+/* SLIDER DENTRO DEL PANEL */
+.slider-wrapper {
+    padding: 15px 0 5px 0;
 }
 
+.slider-contenedor {
+    position: relative;
+    height: 180px; /* Alto fijo del recuadro de la ficha */
+    background-color: #fff;
+    border: 2px solid var(--interfaz);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 15px;
+}
 
-
-.contenido-ficha p {
-
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    padding: 10px;
+    box-sizing: border-box;
     text-align: center;
+}
 
-    margin-bottom: 15px;
+.slide.activa {
+    opacity: 1;
+    z-index: 10;
+}
 
+.controles {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-slider {
+    background-color: var(--interfaz);
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--fuente-titulos);
     font-size: 1rem;
-
+    transition: background-color 0.3s ease;
 }
 
-
+.btn-slider:hover {
+    background-color: var(--titulos);
+}
 
 footer {
-
     margin-top: 50px;
-
     padding-bottom: 40px;
-
     border-top: 2px solid var(--interfaz);
-
     text-align: center;
-
     font-size: 0.95rem;
-
     padding-top: 20px;
-
     width: 100%;
-
 }
 
 /* =========================================
@@ -598,7 +386,7 @@ body.bloqueo-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--fondo);
+    background: url('portada.jpg') center center / cover no-repeat;
     z-index: 2000;
     display: flex;
     align-items: center;
@@ -614,34 +402,53 @@ body.bloqueo-scroll {
 }
 
 .contenido-inicio {
+    background-color: rgba(251, 248, 240, 0.92);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     text-align: center;
-    max-width: 600px;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo-splash {
-    max-width: 140px;
+    max-width: 160px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contenido-inicio h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
 }
 
-.contenido-inicio p {
-    font-size: 1.2rem;
+.bajada-inicio {
+    font-size: 1.3rem;
     font-style: italic;
+    color: var(--titulos);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.texto-invitacion {
+    font-size: 1.15rem;
+    color: var(--texto);
+    text-align: justify; 
+    line-height: 1.6;
+    margin-bottom: 35px;
 }
 
 #btn-comenzar {
-    margin-top: 30px;
-    padding: 14px 32px;
+    padding: 14px 40px;
     background-color: var(--interfaz);
     color: white;
     border: none;
     border-radius: 30px;
     font-family: var(--fuente-titulos);
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
