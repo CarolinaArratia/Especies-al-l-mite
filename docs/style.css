@@ -20,13 +20,13 @@ body {
     background-color: var(--fondo);
     color: var(--texto);
     font-family: var(--fuente-cuerpo);
-    line-height: 1.6;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
 }
 
 /* =========================================
-   MENÚ SUPERIOR Y ANIMACIÓN
+   MENÚ SUPERIOR
 ========================================= */
 .navbar {
     position: fixed; 
@@ -40,32 +40,20 @@ body {
     padding: 15px 40px;
     box-sizing: border-box;
     z-index: 1000;
-    transition: all 0.4s ease-in-out; 
-}
-
-/* Esta clase se añade con JS al hacer scroll */
-.navbar.contraida {
-    padding: 5px 40px;
-    background-color: rgba(251, 248, 240, 0.95); /* Levemente transparente */
+    transition: transform 0.4s ease-in-out; 
 }
 
 .navbar .logo-nav {
     font-family: var(--fuente-titulos);
     color: var(--titulos);
-    font-weight: 700;
     font-size: 1.2rem;
-    transition: font-size 0.4s ease;
-}
-
-.navbar.contraida .logo-nav {
-    font-size: 1rem;
 }
 
 .navbar .enlaces a {
     margin-left: 20px;
     font-size: 0.95rem;
     color: var(--texto);
-    font-weight: bold; 
+    font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -76,31 +64,47 @@ body {
 }
 
 /* =========================================
-   LAYOUT CENTRADO
+   LAYOUT: MÁRGENES Y 75% / 25% PROPORCIÓN
 ========================================= */
-.contenedor-central {
-    max-width: 800px; /* Ancho máximo para lectura cómoda */
-    width: 90%;
-    margin: 120px auto 50px auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los hijos */
+.contenedor-estrecho {
+    max-width: 1300px; 
+    width: 92%;
+    margin: 100px auto 50px auto; 
 }
 
-.cronica-seccion {
+.ancho-texto {
+    width: 75%;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.bloque-interactivo {
+    display: flex;
     width: 100%;
-    margin-bottom: 60px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.texto-izquierdo {
+    width: 75%;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.ficha-derecha {
+    width: 25%;
+    box-sizing: border-box;
 }
 
 /* =========================================
-   DISEÑO DE TEXTOS Y TÍTULOS
+   DISEÑO DE TEXTOS Y ESTILOS BASE
 ========================================= */
 .espacio-banner {
     width: 100%;
-    min-height: 200px;
-    background-color: transparent; 
+    min-height: 250px;
+    background-color: #E8E5DC; 
     border: 2px dashed var(--interfaz);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +112,7 @@ body {
 }
 
 .espacio-banner img {
-    max-height: 180px;
+    max-height: 200px;
     width: auto;
     border: none;
 }
@@ -116,25 +120,24 @@ body {
 h1, h2, h3 {
     font-family: var(--fuente-titulos);
     color: var(--titulos);
-    font-weight: 700; 
-    text-align: center; /* Títulos centrados */
+    font-weight: 400;
 }
 
 h1 {
-    font-size: 3rem; 
+    font-size: 2.8rem;
     line-height: 1.2;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 2.3rem; 
-    margin-top: 40px;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-top: 60px;
+    margin-bottom: 25px;
 }
 
 h3 {
-    font-size: 1.6rem; 
-    margin-top: 30px;
+    font-size: 1.5rem;
+    margin-top: 40px;
     margin-bottom: 15px;
 }
 
@@ -142,28 +145,26 @@ h3 {
     font-size: 1.3rem;
     font-style: italic;
     color: var(--texto);
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .linea-divisoria {
     border: 0;
-    height: 4px; 
+    height: 3px;
     background-color: var(--destacado-burgundy);
-    width: 80px;
-    margin: 20px auto; /* Línea centrada */
+    width: 100px;
+    margin: 25px 0;
     border-radius: 2px;
 }
 
 p {
     font-size: 1.15rem;
-    text-align: center; /* PARRAFOS CENTRADOS según la corrección */
-    margin-bottom: 20px;
+    text-align: justify; /* Textos justificados */
+    margin-bottom: 24px;
 }
 
 strong {
     color: var(--destacado-burgundy);
-    font-weight: 700;
 }
 
 a {
@@ -182,12 +183,10 @@ a:hover {
 ========================================= */
 .grafico-container {
     background-color: var(--recuadros);
-    padding: 20px; 
+    padding: 30px;
     border-radius: 12px;
-    margin: 40px auto; 
-    width: 100%;
+    margin: 40px 0;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .grafico-container img {
@@ -208,76 +207,79 @@ a:hover {
 }
 
 /* =========================================
-   FICHAS EN ACORDEÓN (CENTRADAS)
+   FICHAS INTERACTIVAS (SLIDERS)
 ========================================= */
-.ficha-centrada {
-    width: 100%;
-    max-width: 600px;
-    margin: 35px auto; /* Ficha centrada en la página */
-}
-
-.acordeon-btn {
+.ficha-interactiva {
     background-color: var(--recuadros);
-    color: var(--destacado-burgundy);
-    cursor: pointer;
-    padding: 15px 20px;
-    width: 100%;
-    text-align: left;
     border: 2px solid var(--interfaz);
-    outline: none;
-    transition: 0.3s;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ficha-header {
     font-family: var(--fuente-titulos);
-    font-weight: 700;
-    font-size: 1.1rem;
+    color: var(--destacado-burgundy);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--interfaz);
+    padding-bottom: 5px;
+}
+
+.slider-contenedor {
+    position: relative;
+    height: 180px; 
+    background-color: #fff;
+    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-radius: 8px;
-}
-
-.acordeon-btn.active, .acordeon-btn:hover {
-    background-color: #e3e198; 
-}
-
-.icono-acordeon {
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-.acordeon-panel {
-    padding: 0 15px;
-    background-color: white;
-    max-height: 0;
+    justify-content: center;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    border-left: 2px solid var(--interfaz);
-    border-right: 2px solid var(--interfaz);
-    border-bottom: 2px solid transparent; 
-    border-radius: 0 0 8px 8px;
 }
 
-.acordeon-btn.active + .acordeon-panel {
-    border-bottom: 2px solid var(--interfaz);
-    margin-bottom: 15px;
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    font-size: 0.9rem;
+    color: var(--texto);
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.contenido-ficha {
-    padding: 20px 0;
-    text-align: center;
+.slide.activa {
+    opacity: 1;
+    z-index: 10;
 }
 
-.contenido-ficha p {
-    text-align: center;
-    margin-bottom: 15px;
+.controles {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-slider {
+    background-color: var(--interfaz);
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-slider:hover {
+    background-color: var(--titulos);
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
     padding-bottom: 40px;
     border-top: 2px solid var(--interfaz);
-    text-align: center; 
+    text-align: center;
     font-size: 0.95rem;
-    padding-top: 20px;
-    width: 100%;
 }
