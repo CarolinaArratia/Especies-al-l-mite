@@ -5,40 +5,43 @@ document.addEventListener("DOMContentLoaded", function() {
     // ==========================================
     ScrollReveal().reveal('.animar-seccion', { 
         delay: 200, 
-        distance: '40px', 
-        duration: 1000, 
+        distance: '30px', 
+        duration: 800, 
         easing: 'ease-in-out',
         origin: 'bottom'
     });
 
     ScrollReveal().reveal('.grafico-container', { 
-        delay: 400, 
-        distance: '30px', 
-        duration: 1200, 
+        delay: 300, 
+        distance: '20px', 
+        duration: 1000, 
         origin: 'left'
     });
 
     // ==========================================
-    // 2. FICHAS INTERACTIVAS (Sliders Laterales)
+    // 2. FICHAS INTERACTIVAS (Acordeón)
     // ==========================================
-    const fichas = document.querySelectorAll('.ficha-interactiva');
-    
-    fichas.forEach(ficha => {
-        const slides = ficha.querySelectorAll('.slide');
-        const btnNext = ficha.querySelector('.next');
-        const btnPrev = ficha.querySelector('.prev');
-        let indexActual = 0;
+    // Seleccionamos todos los botones de acordeón
+    var acordeones = document.querySelectorAll(".acordeon-btn");
 
-        btnNext.addEventListener('click', () => {
-            slides[indexActual].classList.remove('activa');
-            indexActual = (indexActual + 1) % slides.length;
-            slides[indexActual].classList.add('activa');
-        });
-
-        btnPrev.addEventListener('click', () => {
-            slides[indexActual].classList.remove('activa');
-            indexActual = (indexActual - 1 + slides.length) % slides.length;
-            slides[indexActual].classList.add('activa');
+    acordeones.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            // Alterna la clase 'active' para cambiar el color del botón
+            this.classList.toggle("active");
+            
+            // Selecciona el panel que está inmediatamente después del botón
+            var panel = this.nextElementSibling;
+            var icono = this.querySelector('.icono-acordeon');
+            
+            // Si el panel está abierto (tiene max-height), lo cerramos
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                icono.textContent = '+';
+            } else {
+                // Si está cerrado, le damos de max-height el tamaño de su contenido
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                icono.textContent = '-';
+            }
         });
     });
 
@@ -51,13 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
+        // Si el usuario scrollea hacia ABAJO
         if (scrollTop > lastScrollTop && scrollTop > 150) {
             navbar.style.transform = 'translateY(-100%)'; 
         } 
+        // Si el usuario scrollea hacia ARRIBA
         else if (scrollTop < lastScrollTop) {
             navbar.style.transform = 'translateY(0)';     
         }
         
+        // Asegurar que arriba de todo siempre se vea el menú
         if (scrollTop <= 50) {
             navbar.style.transform = 'translateY(0)';
         }
