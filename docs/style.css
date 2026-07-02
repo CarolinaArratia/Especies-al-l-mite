@@ -536,12 +536,21 @@ body.bloqueo-scroll {
     line-height: 1.5; 
 }
 
+/* --- JERARQUÍA DE FILTROS --- */
 .filtros-galeria {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
     margin-bottom: 50px;
+    width: 100%;
+}
+
+.filtro-grupo {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .btn-filtro {
@@ -562,12 +571,11 @@ body.bloqueo-scroll {
     transform: translateY(-2px); 
 }
 
-/* Grilla adaptable para 4 columnas */
+/* --- GRILLA ADAPTABLE --- */
 .grid-galeria {
     display: grid;
-    /* Reducimos el minmax a 180px para que encajen 4 tarjetas en los 850px de ancho central */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-    gap: 20px; /* Reducimos ligeramente el espacio entre tarjetas */
+    gap: 20px; 
     width: 100%;
 }
 
@@ -579,7 +587,7 @@ body.bloqueo-scroll {
     border: 2px solid transparent;
     transition: all 0.4s ease;
     aspect-ratio: 4/5; 
-    cursor: crosshair; 
+    cursor: zoom-in; /* Cursor de lupa al hacer hover sobre la tarjeta */
 }
 
 .tarjeta-especie:hover {
@@ -650,7 +658,88 @@ body.bloqueo-scroll {
 
 .cr { background-color: var(--destacado-burgundy); } 
 .en { background-color: var(--titulos); } 
+.en-r { background-color: #1A2C46; } /* Color para la nueva categoría "En Peligro Rara" */
 
 .oculto {
     display: none !important;
+}
+
+/* =========================================
+   MODAL (LIGHTBOX PARA IMÁGENES)
+========================================= */
+.modal-oculto {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 30, 45, 0.92); /* Azul muy oscuro y translúcido de la paleta */
+    backdrop-filter: blur(5px); /* Desenfoca el fondo de la página */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-oculto.mostrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    animation: zoomIn 0.4s ease;
+}
+
+#caption-modal {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--fondo);
+    padding: 20px 0;
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: var(--datos-verde);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.95); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
