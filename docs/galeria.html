@@ -33,16 +33,25 @@
         </div>
 
         <div class="filtros-galeria animar-seccion" id="contenedor-filtros">
-            <button class="btn-filtro activo" data-filtro="todos">Ver Todas</button>
-            <button class="btn-filtro" data-filtro="cr">Peligro Crítico (CR)</button>
-            <button class="btn-filtro" data-filtro="en">En Peligro (EN)</button>
-            <button class="btn-filtro" data-filtro="anfibio">Anfibios</button>
-            <button class="btn-filtro" data-filtro="ave">Aves</button>
-            <button class="btn-filtro" data-filtro="insecto">Insectos</button>
-            <button class="btn-filtro" data-filtro="mamifero">Mamíferos</button>
-            <button class="btn-filtro" data-filtro="pez">Peces</button>
-            <button class="btn-filtro" data-filtro="reptil">Reptiles</button>
-            <button class="btn-filtro" data-filtro="invertebrado">Otros Invertebrados</button>
+            <div class="filtro-grupo principal">
+                <button class="btn-filtro activo" data-filtro="todos">Ver Todas</button>
+            </div>
+            
+            <div class="filtro-grupo rce">
+                <button class="btn-filtro" data-filtro="cr">Peligro Crítico (CR)</button>
+                <button class="btn-filtro" data-filtro="en">En Peligro (EN)</button>
+                <button class="btn-filtro" data-filtro="en-r">En Peligro Rara (EN-R)</button>
+            </div>
+
+            <div class="filtro-grupo clase">
+                <button class="btn-filtro" data-filtro="anfibio">Anfibios</button>
+                <button class="btn-filtro" data-filtro="ave">Aves</button>
+                <button class="btn-filtro" data-filtro="insecto">Insectos</button>
+                <button class="btn-filtro" data-filtro="mamifero">Mamíferos</button>
+                <button class="btn-filtro" data-filtro="pez">Peces</button>
+                <button class="btn-filtro" data-filtro="reptil">Reptiles</button>
+                <button class="btn-filtro" data-filtro="invertebrado">Otros Invertebrados</button>
+            </div>
         </div>
 
         <div class="grid-galeria" id="muro-especies">
@@ -65,12 +74,12 @@
                 </div>
             </div>
 
-            <div class="tarjeta-especie animar-seccion" data-categoria="en anfibio">
+            <div class="tarjeta-especie animar-seccion" data-categoria="en-r anfibio">
                 <img src="imgs/Alsodes_tumultuosus.jpg" alt="Sapo" class="img-especie">
                 <div class="info-especie">
                     <h3>Sapo</h3>
                     <p>Alsodes tumultuosus</p>
-                    <span class="etiqueta-riesgo en">En Peligro Rara (EN-R)</span>
+                    <span class="etiqueta-riesgo en-r">En Peligro Rara (EN-R)</span>
                 </div>
             </div>
 
@@ -316,6 +325,12 @@
         <p>Reportaje de Periodismo de Datos y Visualización | Proyecto: Especies al Límite</p>
     </footer>
 
+    <div id="modal-galeria" class="modal-oculto">
+        <span class="cerrar-modal">&times;</span>
+        <img class="modal-contenido" id="img-modal">
+        <div id="caption-modal"></div>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             
@@ -372,6 +387,53 @@
                     });
                 });
             }
+
+            // 4. Lógica del Modal (Lightbox) para agrandar imágenes
+            const modal = document.getElementById("modal-galeria");
+            const imgModal = document.getElementById("img-modal");
+            const captionModal = document.getElementById("caption-modal");
+            const btnCerrar = document.querySelector(".cerrar-modal");
+
+            // Abrir modal al hacer click en la tarjeta
+            tarjetasEspecie.forEach(tarjeta => {
+                tarjeta.addEventListener('click', function() {
+                    const imagenSrc = this.querySelector('.img-especie').src;
+                    const titulo = this.querySelector('h3').innerText;
+                    const nombreCientifico = this.querySelector('p').innerText;
+                    
+                    modal.classList.add("mostrar");
+                    imgModal.src = imagenSrc;
+                    captionModal.innerHTML = `<strong>${titulo}</strong><br><span style="font-size: 1.1rem; font-style: italic;">${nombreCientifico}</span>`;
+                    
+                    // Bloquear scroll de fondo
+                    document.body.style.overflow = "hidden";
+                });
+            });
+
+            // Función para cerrar modal
+            function cerrarModal() {
+                modal.classList.remove("mostrar");
+                document.body.style.overflow = "auto";
+            }
+
+            // Cerrar con la X
+            if(btnCerrar) {
+                btnCerrar.addEventListener('click', cerrarModal);
+            }
+
+            // Cerrar al hacer click en el fondo oscuro
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    cerrarModal();
+                }
+            });
+
+            // Cerrar al apretar la tecla Escape
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape" && modal.classList.contains("mostrar")) {
+                    cerrarModal();
+                }
+            });
 
         });
     </script>
