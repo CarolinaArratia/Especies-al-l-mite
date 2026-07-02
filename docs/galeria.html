@@ -9,7 +9,6 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="estilogaleria.css">
 </head>
 <body>
 
@@ -35,48 +34,276 @@
 
         <div class="filtros-galeria animar-seccion" id="contenedor-filtros">
             <button class="btn-filtro activo" data-filtro="todos">Ver Todas</button>
-            <button class="btn-filtro" data-filtro="cr">En Peligro Crítico (CR)</button>
+            <button class="btn-filtro" data-filtro="cr">Peligro Crítico (CR)</button>
             <button class="btn-filtro" data-filtro="en">En Peligro (EN)</button>
             <button class="btn-filtro" data-filtro="anfibio">Anfibios</button>
             <button class="btn-filtro" data-filtro="ave">Aves</button>
             <button class="btn-filtro" data-filtro="insecto">Insectos</button>
             <button class="btn-filtro" data-filtro="mamifero">Mamíferos</button>
+            <button class="btn-filtro" data-filtro="pez">Peces</button>
+            <button class="btn-filtro" data-filtro="reptil">Reptiles</button>
+            <button class="btn-filtro" data-filtro="invertebrado">Otros Invertebrados</button>
         </div>
 
         <div class="grid-galeria" id="muro-especies">
             
+            <div class="tarjeta-especie animar-seccion" data-categoria="en invertebrado">
+                <img src="imgs/Aegla_expansa.jpg" alt="Pancora" class="img-especie">
+                <div class="info-especie">
+                    <h3>Pancora</h3>
+                    <p>Aegla expansa</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en anfibio">
+                <img src="imgs/Alsodes_cantillanensis.jpg" alt="Sapo" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sapo</h3>
+                    <p>Alsodes cantillanensis</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en anfibio">
+                <img src="imgs/Alsodes_tumultuosus.jpg" alt="Sapo" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sapo</h3>
+                    <p>Alsodes tumultuosus</p>
+                    <span class="etiqueta-riesgo en">En Peligro Rara (EN-R)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en invertebrado">
+                <img src="imgs/Americobdella_valdiviana.jpg" alt="Liguay" class="img-especie">
+                <div class="info-especie">
+                    <h3>Liguay</h3>
+                    <p>Americobdella valdiviana</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en pez">
+                <img src="imgs/Bullockia_maldonadoi.jpg" alt="Bagrecito" class="img-especie">
+                <div class="info-especie">
+                    <h3>Bagrecito</h3>
+                    <p>Bullockia maldonadoi</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
             <div class="tarjeta-especie animar-seccion" data-categoria="cr insecto">
-                <img src="borrachito_real.jpeg" alt="Borrachito" class="img-especie">
+                <img src="imgs/Callisphyris_ficheti.jpg" alt="Sierra del Orocoipo" class="img-especie">
                 <div class="info-especie">
-                    <h3>Borrachito</h3>
-                    <p>Sclerostomulus nitidus</p>
-                    <span class="etiqueta-riesgo cr">En Peligro Crítico (CR)</span>
+                    <h3>Sierra del Orocoipo</h3>
+                    <p>Callisphyris ficheti</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
                 </div>
             </div>
 
-            <div class="tarjeta-especie animar-seccion" data-categoria="cr anfibio">
-                <img src="ranita_darwin_real.jpeg" alt="Ranita de Darwin del Norte" class="img-especie">
+            <div class="tarjeta-especie animar-seccion" data-categoria="en insecto">
+                <img src="imgs/Chileputo_chilensis.jpg" alt="Chanchito blanco de la araucaria" class="img-especie">
                 <div class="info-especie">
-                    <h3>Ranita de Darwin del Norte</h3>
-                    <p>Rhinoderma rufum</p>
-                    <span class="etiqueta-riesgo cr">En Peligro Crítico (CR)</span>
+                    <h3>Chanchito blanco de la araucaria</h3>
+                    <p>Chileputo chilensis</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
                 </div>
             </div>
 
-            <div class="tarjeta-especie animar-seccion" data-categoria="en ave">
-                <img src="pinguino_humboldt_real.jpeg" alt="Pingüino de Humboldt" class="img-especie">
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr invertebrado">
+                <img src="imgs/Chilina_angusta.jpg" alt="Caracol de Paposo" class="img-especie">
                 <div class="info-especie">
-                    <h3>Pingüino de Humboldt</h3>
-                    <p>Spheniscus humboldti</p>
+                    <h3>Caracol de Paposo</h3>
+                    <p>Chilina angusta</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en pez">
+                <img src="imgs/Chrysiptera_rapanui.jpg" alt="Mamata" class="img-especie">
+                <div class="info-especie">
+                    <h3>Mamata</h3>
+                    <p>Chrysiptera rapanui</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en insecto">
+                <img src="imgs/Cnemalobus_nuria.jpg" alt="Cnemalobus nuria" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sin nombre común</h3>
+                    <p>Cnemalobus nuria</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr insecto">
+                <img src="imgs/Cnemalobus_pegnai.jpg" alt="Cnemalobus pegnai" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sin nombre común</h3>
+                    <p>Cnemalobus pegnai</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en insecto">
+                <img src="imgs/Conognatha_azarae_fisheri.jpg" alt="Balita, insecto joya de Fisher" class="img-especie">
+                <div class="info-especie">
+                    <h3>Balita, insecto joya</h3>
+                    <p>Conognatha azarae fisheri</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr invertebrado">
+                <img src="imgs/Euathlus_condorito.jpg" alt="Araña pollito, tarántula" class="img-especie">
+                <div class="info-especie">
+                    <h3>Araña pollito</h3>
+                    <p>Euathlus condorito</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr invertebrado">
+                <img src="imgs/Euathlus_parvulus.jpg" alt="Tarántula enana, araña pollito" class="img-especie">
+                <div class="info-especie">
+                    <h3>Tarántula enana</h3>
+                    <p>Euathlus parvulus</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr ave">
+                <img src="imgs/Geranoaetus_polyosoma_exsul.jpg" alt="Aguilucho de Más Afuera" class="img-especie">
+                <div class="info-especie">
+                    <h3>Aguilucho de Más Afuera</h3>
+                    <p>Geranoaetus polyosoma exsul</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr invertebrado">
+                <img src="imgs/Heleobia_atacamensis.jpg" alt="Caracol" class="img-especie">
+                <div class="info-especie">
+                    <h3>Caracol</h3>
+                    <p>Heleobia atacamensis</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr reptil">
+                <img src="imgs/Liolaemus_confusus.jpg" alt="Lagartija de Lolol" class="img-especie">
+                <div class="info-especie">
+                    <h3>Lagartija de Lolol</h3>
+                    <p>Liolaemus confusus</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr reptil">
+                <img src="imgs/Liolaemus_curis.jpeg" alt="Lagarto negro" class="img-especie">
+                <div class="info-especie">
+                    <h3>Lagarto negro</h3>
+                    <p>Liolaemus curis</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en reptil">
+                <img src="imgs/Liolaemus_leopardinus.jpg" alt="Lagarto leopardo" class="img-especie">
+                <div class="info-especie">
+                    <h3>Lagarto leopardo</h3>
+                    <p>Liolaemus leopardinus</p>
                     <span class="etiqueta-riesgo en">En Peligro (EN)</span>
                 </div>
             </div>
 
             <div class="tarjeta-especie animar-seccion" data-categoria="en mamifero">
-                <img src="chinchilla_costina_real.jpeg" alt="Chinchilla Costina" class="img-especie">
+                <img src="imgs/Lycalopex_fulvipes.jpg" alt="Zorro de Chiloé" class="img-especie">
                 <div class="info-especie">
-                    <h3>Chinchilla Costina</h3>
-                    <p>Chinchilla lanigera</p>
+                    <h3>Zorro de Chiloé</h3>
+                    <p>Lycalopex fulvipes</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en pez">
+                <img src="imgs/Mordacia_lapicida.jpg" alt="Lamprea de agua dulce" class="img-especie">
+                <div class="info-especie">
+                    <h3>Lamprea de agua dulce</h3>
+                    <p>Mordacia lapicida</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr invertebrado">
+                <img src="imgs/Omalonyx_gayana.jpg" alt="Caracol terrestre Omalonyx" class="img-especie">
+                <div class="info-especie">
+                    <h3>Caracol terrestre Omalonyx</h3>
+                    <p>Omalonyx gayana</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en invertebrado">
+                <img src="imgs/Paropisthopatus_umbrinus.jpg" alt="Gusano aterciopelado" class="img-especie">
+                <div class="info-especie">
+                    <h3>Gusano aterciopelado</h3>
+                    <p>Paropisthopatus umbrinus</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en ave">
+                <img src="imgs/Pterodroma_externa.jpg" alt="Fardela blanca de Juan Fernández" class="img-especie">
+                <div class="info-especie">
+                    <h3>Fardela blanca</h3>
+                    <p>Pterodroma externa</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr anfibio">
+                <img src="imgs/Rhinoderma_rufum.jpg" alt="Ranita" class="img-especie">
+                <div class="info-especie">
+                    <h3>Ranita</h3>
+                    <p>Rhinoderma rufum</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr ave">
+                <img src="imgs/Sephanoides_fernandensis.jpg" alt="Picaflor de Juan Fernández" class="img-especie">
+                <div class="info-especie">
+                    <h3>Picaflor de Juan Fernández</h3>
+                    <p>Sephanoides fernandensis</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="cr anfibio">
+                <img src="imgs/Telmatobius_chusmisensis.jpg" alt="Sapo" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sapo</h3>
+                    <p>Telmatobius chusmisensis</p>
+                    <span class="etiqueta-riesgo cr">Peligro Crítico (CR)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en anfibio">
+                <img src="imgs/Telmatobufo_venustus.jpeg" alt="Sapo hermoso" class="img-especie">
+                <div class="info-especie">
+                    <h3>Sapo hermoso</h3>
+                    <p>Telmatobufo venustus</p>
+                    <span class="etiqueta-riesgo en">En Peligro (EN)</span>
+                </div>
+            </div>
+
+            <div class="tarjeta-especie animar-seccion" data-categoria="en pez">
+                <img src="imgs/Trichomycterus_laucaensis.jpg" alt="Bagrecito" class="img-especie">
+                <div class="info-especie">
+                    <h3>Bagrecito</h3>
+                    <p>Trichomycterus laucaensis</p>
                     <span class="etiqueta-riesgo en">En Peligro (EN)</span>
                 </div>
             </div>
