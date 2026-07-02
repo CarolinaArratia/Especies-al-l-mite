@@ -451,7 +451,7 @@ body.bloqueo-scroll {
 .texto-invitacion {
     font-size: 1.15rem;
     color: var(--texto);
-    text-align: justify; 
+    text-align: center; /* Aquí cambiamos justify por center */
     line-height: 1.6;
     margin-bottom: 35px;
 }
